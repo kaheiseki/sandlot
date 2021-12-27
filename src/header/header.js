@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // ヘッダーを表示するコンポーネント
 const Header = () => {
   return(
-    <Navbar collapseOnSelect expand="true" bg="info" variant="dark">
+    <Navbar collapseOnSelect expand="true" bg="success" variant="dark">
       <Navbar.Brand href="#home">
         Sandlot
       </Navbar.Brand>
