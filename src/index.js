@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import Header from "./header"
+import Header from "./header/header"
 import GameInfo from "./gameinfo"
 
 const Root = () => {
