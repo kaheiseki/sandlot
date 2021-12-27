@@ -3,7 +3,6 @@ import {Card,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GameInfo = () => {
-  let a = 1;
   return(
     <div>
       <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>

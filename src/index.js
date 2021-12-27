@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import ReactDOM from "react-dom";
+import {Link} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Header from "./header/header"
@@ -9,6 +10,7 @@ import TeamInfo from "./teamTable/teaminfo"
 const Root = () => {
   return(
     <div>
+
       <Header/>
       <div className = "infolist">
         <div className = "gameinfo"><GameInfo/></div>
@@ -16,20 +18,7 @@ const Root = () => {
         <div className = "gameinfo"><GameInfo/></div>
         <div className = "gameinfo"><GameInfo/></div>
         <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
+
       </div>
     </div>
   )
