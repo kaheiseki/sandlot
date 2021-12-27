@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Header from "./header/header"
-import GameInfo from "./gameinfo"
+import GameInfo from "./index/gameinfo"
+import TeamInfo from "./teamTable/teaminfo"
 
 const Root = () => {
   return(
