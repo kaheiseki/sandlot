@@ -28,6 +28,7 @@ const Root = () => {
         <div className = "gameinfo"><GameInfo/></div>
         <div className = "gameinfo"><GameInfo/></div>
         <div className = "gameinfo"><GameInfo/></div>
+        <div className = "gameinfo"><GameInfo/></div>
       </div>
     </div>
   )
