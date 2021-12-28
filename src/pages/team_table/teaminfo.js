@@ -12,7 +12,7 @@ const TeamInfo = () => {
           メンバー数
         </Card.Text>
         <Card.Text>
-        主な活動場所
+          主な活動場所
         </Card.Text>
       </Card.Body>
       </Card>
