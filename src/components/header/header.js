@@ -13,9 +13,9 @@ const Header = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#">マイチーム</Nav.Link>
-          <Nav.Link href="#">募集作成</Nav.Link>
-          <Nav.Link href="#">チーム一覧</Nav.Link>
+          <Nav.Link href="#" className="headerContents">マイチーム</Nav.Link>
+          <Nav.Link href="#" className="headerContents">募集作成</Nav.Link>
+          <Nav.Link href="#" className="headerContents">チーム一覧</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
