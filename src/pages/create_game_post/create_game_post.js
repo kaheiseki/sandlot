@@ -4,7 +4,7 @@ import { db } from "../../firebase";
 import {
   collection,
   addDoc,
-} from "../firebase/firestore";
+} from "firebase/firestore";
 
 export const CreateGamePost = () => {
   const [newTeamName, setNewTeamName] = useState("");
@@ -13,7 +13,7 @@ export const CreateGamePost = () => {
   const gamesCollectionRef = collection(db, "Games");
 
   const createGame = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, count: Number(Count) });
+    await addDoc(gamesCollectionRef, { name: newTeamName, count: Number(newCount) });
   };
 
   return (
