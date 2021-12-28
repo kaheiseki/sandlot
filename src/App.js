@@ -14,8 +14,8 @@ const App = () => {
 
       <Header/>
       <div className = "infolist">
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
+        {/* <div className = "gameinfo"><GameInfo/></div>
+        <div className = "gameinfo"><GameInfo/></div> */}
         <div><CreateGamePost/></div>
       </div>
     </div>
