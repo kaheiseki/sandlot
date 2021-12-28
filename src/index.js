@@ -15,9 +15,6 @@ const Root = () => {
       <div className = "infolist">
         <div className = "gameinfo"><GameInfo/></div>
         <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
       </div>
     </div>
   )
