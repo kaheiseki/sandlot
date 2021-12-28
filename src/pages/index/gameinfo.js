@@ -7,7 +7,7 @@ const GameInfo = () => {
     <div>
       <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
       <Card.Body>
-        <Card.Title>募集チーム</Card.Title>
+        <Card.Title>募集チーム名</Card.Title>
         <Card.Text>
         日時:
         </Card.Text>
