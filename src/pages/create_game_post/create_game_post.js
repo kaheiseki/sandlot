@@ -19,11 +19,17 @@ import './create_game_post.css';
 export const CreateGamePost = () => {
   const [newTeamName, setNewTeamName] = useState("");
   const [newCount, setNewCount] = useState(0);
+  const [newPlace, setNewPlace] = useState("");
 
   const gamesCollectionRef = collection(db, "Games");
 
   const createGame = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, count: Number(newCount) });
+    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount) });
+    // フォーム送信後中身を空にする処理（まだうまくいってない）
+    setNewTeamName("");
+    setNewCount(0);
+    setNewPlace("");
+
   };
 
 
@@ -35,9 +41,16 @@ export const CreateGamePost = () => {
           <Card.Title className='createGamePostTitle'>募集ゲーム作成</Card.Title>
           <input
             className='form-control'
-            placeholder="Name..."
+            placeholder="Team name..."
             onChange={(event) => {
               setNewTeamName(event.target.value);
+            }}
+          />
+          <input
+            className='form-control'
+            placeholder="Place"
+            onChange={(event) => {
+              setNewPlace(event.target.value);
             }}
           />
           <input
@@ -49,21 +62,15 @@ export const CreateGamePost = () => {
             }}
           />
         </Card.Body>
-        <Button variant="primary" style = {{width:"180px"}} onClick={createGame}>
-            Create Game
-        </Button>
+        <form>
+          <Button variant="primary" style = {{width:"180px"}} onClick={createGame}>
+              Create Game
+          </Button>
+        </form>
+
       </Card>
 
 
-    {/* {games.map((game) => {
-      return (
-        <div>
-          {" "}
-          <h1>Team: {game.name}</h1>
-          <h1>Member Count: {game.count}</h1>
-        </div>
-      );
-    })} */}
     </div>
   );
 }
