@@ -16,20 +16,17 @@ const App = () => {
     <div>
 
       <Header/>
-      {/* <div className = "infolist">
-        <div className = "gameinfo"><GameInfo/></div>
-        <div className = "gameinfo"><GameInfo/></div>
-        <div><CreateGamePost/></div>
-      </div> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/home" element={<GameInfo/>}/>
-          <Route path="/myteam" element={<MyTeam/>}/>
-          <Route path="/creategame" element={<CreateGamePost/>}/>
-          <Route path="/teamtable" element={<TeamInfo/>}/>
-          <Route path="*" element={<ErrorPage/>}/>
-        </Routes>
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/home" element={<GameInfo/>}/>
+            <Route path="/myteam" element={<MyTeam/>}/>
+            <Route path="/creategame" element={<CreateGamePost/>}/>
+            <Route path="/teamtable" element={<TeamInfo/>}/>
+            <Route path="*" element={<ErrorPage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   )
 }
