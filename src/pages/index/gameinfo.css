@@ -28,9 +28,8 @@ div .match{
   margin: 20px;
 }
 
-div .infolist{
-  width: 400px;
-  margin:50px;
+
+div.container{
   display:flex;
   flex-wrap:wrap;
   justify-content: center;

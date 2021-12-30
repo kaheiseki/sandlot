@@ -32,7 +32,7 @@ const GameInfo = () => {
       <div className="gameInfoTitle">
         試合一覧
       </div>
-      <div>
+      <div className="container">
         {games.map((game) => {
           return (
             <div className="infolist">
