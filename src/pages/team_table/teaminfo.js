@@ -1,21 +1,50 @@
 import React from "react";
-import {Card} from 'react-bootstrap';
+import { useState, useEffect } from "react";
+import {Card,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './teaminfo.css';
+import { db } from "../../firebase";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 const TeamInfo = () => {
+  const [teams, setTeams] = useState([]);
+  const teamsCollectionRef = collection(db, "Teams");
+  const getTeams = async () => {
+    const data = await getDocs(teamsCollectionRef);
+    setTeams(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+  useEffect(() => {
+    getTeams();
+  },[]);
+
   return(
     <div>
-      <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
-      <Card.Body>
-        <Card.Title>チーム名</Card.Title>
-        <Card.Text>
-          メンバー数
-        </Card.Text>
-        <Card.Text>
-          主な活動場所
-        </Card.Text>
-      </Card.Body>
-      </Card>
+      <div className="gameInfoTitle">
+        チーム一覧
+      </div>
+      <div className="container">
+        {teams.map((team) => {
+          return (
+            <div className="infolist">
+              <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
+                <Card.Body>
+                  <Card.Title>{team.name}</Card.Title>
+                  <Card.Text>チーム人数: {team.count}</Card.Text>
+                  <Card.Text>場所: {team.place}</Card.Text>
+                </Card.Body>
+                <Button variant="primary" style = {{width:"120px"}}>詳細を見る</Button>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

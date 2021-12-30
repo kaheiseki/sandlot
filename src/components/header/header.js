@@ -16,6 +16,7 @@ const Header = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/myteam" className="headerContents">マイチーム</Nav.Link>
+          <Nav.Link href="/createteam" className="headerContents">新規チーム追加</Nav.Link>
           <Nav.Link href="/creategame" className="headerContents">募集作成</Nav.Link>
           <Nav.Link href="teamtable" className="headerContents">チーム一覧</Nav.Link>
         </Nav>
