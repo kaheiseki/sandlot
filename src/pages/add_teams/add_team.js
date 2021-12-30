@@ -13,7 +13,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
 
-export const CreateTeamPost = () => {
+export const AddTeam = () => {
 
   const [newTeamName, setNewTeamName] = useState("");
   const [newCount, setNewCount] = useState(0);
