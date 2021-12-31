@@ -1,15 +1,7 @@
 import React, { useCallback } from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {createUserWithEmailAndPassword} from "firebase/auth"
-import {auth, db} from "../../firebase";
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
+import {auth} from "../../firebase";
 
 
 export const SignUp = () => {
@@ -26,13 +18,10 @@ export const SignUp = () => {
   },[setEmail]);
   const inputPassword = useCallback((e) => {
     setPassword(e.target.value)
-  },[setPassword]);
+  },[setUsername]);
   const inputConfirmPassword = useCallback((e) => {
     setConfirmPassword(e.target.value)
   },[setConfirmPassword]);
-  
-
-  
 
   const Signup = (username,email,password,confirmPassword) => {
     return async() => {
@@ -46,15 +35,12 @@ export const SignUp = () => {
         return false
       }
 
-     
-
       return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
         const user = userCredential.user;
-        const usersCollectionRef = collection(db, "Users");
-        addDoc(usersCollectionRef, { name:username, id:user.uid});
       })
       .catch((error) => {
-        alert("入力が不正です")
+        const errorCode = error.code;
+        const errorMessage = error.message;
       })
     }
   }
@@ -66,9 +52,6 @@ export const SignUp = () => {
       <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
       <input className='form-control' placeholder="パスワード（確認用）" onChange={inputConfirmPassword}/>
       <button className = "button" onClick = {Signup(username,email,password,confirmPassword)}>ユーザー登録</button>
-      
     </div>
-
-    
   )
 };
