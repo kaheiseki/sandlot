@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ErrorPage } from "./pages/error_page/error_page";
 import { MyTeam } from "./pages/my_team/my_team";
 import { AddTeam } from "./pages/add_teams/add_team";
-import { Login } from "./pages/login/login";
+import { SignUp } from "./pages/signup/signup";
 
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/creategame" element={<CreateGamePost/>}/>
             <Route path="/teamtable" element={<TeamInfo/>}/>
             <Route path = "/createteam" element = {<AddTeam/>}/>
-            <Route path = "/login" element ={<Login/>}/>
+            <Route path = "/signup" element ={<SignUp/>}/>
             <Route path="*" element={<ErrorPage/>}/>
           </Routes>
         </BrowserRouter>
