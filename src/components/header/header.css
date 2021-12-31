@@ -1,7 +1,12 @@
+*{
+  font-family: sans-serif;
+}
 .headerText{
   margin-left: 20px;
+  color: #88b940;
 }
 
 .headerContents{
   margin-left: 20px;
+  color: #ffffff;
 }
