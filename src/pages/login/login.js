@@ -2,6 +2,8 @@ import React, { useCallback } from 'react'
 import { useState } from "react";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword ,signOut} from "firebase/auth";
+import './login.css';
+
 
 export const Login = () => {
   const[email,setEmail] = useState("");
@@ -25,10 +27,19 @@ export const Login = () => {
   }
   return (
     <div>
-      <input className='form-control' placeholder="メールアドレス" onChange={inputEmail}/>
-      <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
-      <button className = "button" onClick = {LogIn(email,password)}>ログイン</button>
-      <button onclick = {auth.signOut()}>ログアウト</button>
+      <div className='signin_form'>
+        <div className='signin_form_inner'>
+          <div className='signin_form_text'>Email Address</div>
+          <input className='form-control' placeholder="メールアドレス" onChange={inputEmail}/>
+          <div className='signin_form_text'>Password</div>
+          <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
+        </div>
+        <button className = "button" onClick = {LogIn(email,password)}>ログイン</button>
+        <button onClick = {auth.signOut()}>ログアウト</button>
+      </div>
+      <div>
+        Create an account to use Sandlot for free!
+      </div>
     </div>
   )
 }

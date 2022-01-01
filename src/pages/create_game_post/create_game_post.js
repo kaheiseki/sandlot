@@ -100,7 +100,8 @@ export const CreateGamePost = () => {
           />
         </Card.Body>
         <form>
-          <Button variant="primary" style = {{width:"180px"}} onClick={createGame}>
+          <Button variant="primary" style = {{width:"180px"}} onClick={createGame} autoFocus>
+            {/* autoFocusしたい */}
               Create Game
           </Button>
         </form>

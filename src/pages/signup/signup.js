@@ -30,9 +30,7 @@ export const SignUp = () => {
   const inputConfirmPassword = useCallback((e) => {
     setConfirmPassword(e.target.value)
   },[setConfirmPassword]);
-  
 
-  
 
   const Signup = (username,email,password,confirmPassword) => {
     return async() => {
@@ -46,8 +44,6 @@ export const SignUp = () => {
         return false
       }
 
-     
-
       return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
         const user = userCredential.user;
         const usersCollectionRef = collection(db, "Users");
@@ -58,7 +54,6 @@ export const SignUp = () => {
       })
     }
   }
-
   return(
     <div>
       <input className='form-control' placeholder="ユーザー名" onChange={inputUsername}/>
@@ -66,9 +61,6 @@ export const SignUp = () => {
       <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
       <input className='form-control' placeholder="パスワード（確認用）" onChange={inputConfirmPassword}/>
       <button className = "button" onClick = {Signup(username,email,password,confirmPassword)}>ユーザー登録</button>
-      
     </div>
-
-    
   )
 };
