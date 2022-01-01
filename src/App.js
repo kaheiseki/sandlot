@@ -12,6 +12,7 @@ import { MyTeam } from "./pages/my_team/my_team";
 import { AddTeam } from "./pages/add_teams/add_team";
 import { SignUp } from "./pages/signup/signup";
 import { Login } from "./pages/login/login";
+import TestSignUp from "./test/test";
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path = "/createteam" element = {<AddTeam/>}/>
             <Route path = "/signup" element ={<SignUp/>}/>
             <Route path = "/login" element = {<Login/>}/>
+            <Route path = "/test_signup" element = {<TestSignUp/>}/>
             <Route path="*" element={<ErrorPage/>}/>
           </Routes>
         </BrowserRouter>
