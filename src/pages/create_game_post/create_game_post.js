@@ -17,10 +17,11 @@ import './create_game_post.css';
 
 
 export const CreateGamePost = () => {
-  const [newGameDate, setNewGameDate] = useState(0);
-  // 本来date型でデータを収集したいが、一旦ただの数値で格納
   const [newTeamName, setNewTeamName] = useState("");
   const [newCount, setNewCount] = useState(0);
+  const [newGameDate, setNewGameDate] = useState(0);
+  // 本来date型でデータを収集したいが、一旦ただの数値で格納
+  const [newGameTime, setNewGameTime] = useState(0);
   const [newPlace, setNewPlace] = useState("");
   const [newStation, setNewStation] = useState("");
   const [newCost, setNewCost] = useState(0);
@@ -29,11 +30,10 @@ export const CreateGamePost = () => {
   const gamesCollectionRef = collection(db, "Games");
 
   const createGame = async () => {
-    await addDoc(gamesCollectionRef, { date: newGameDate, name: newTeamName, place: newPlace, station: newStation, count: Number(newCount), cost: newCost, helper: newHelper });
+    await addDoc(gamesCollectionRef, { name: newTeamName, date: newGameDate, time: newGameTime, place: newPlace, station: newStation, count: Number(newCount), cost: newCost, helper: newHelper });
     // フォーム送信後中身を空にする処理（まだうまくいってない）
     setNewCount(0);
     setNewTeamName("");
-    setNewCount(0);
     setNewPlace("");
     setNewHelper(0);
 
@@ -49,9 +49,18 @@ export const CreateGamePost = () => {
           <input
             className='form-control'
             type="number"
-            placeholder="Date"
+            placeholder="Date: ex)20220120"
             onChange={(event) => {
               setNewGameDate(event.target.value);
+            }}
+          />
+          {/* カレンダーから選ぶやつ実装したい */}
+          <input
+            className='form-control'
+            type="number"
+            placeholder="Playball Time: ex)15:00"
+            onChange={(event) => {
+              setNewGameTime(event.target.value);
             }}
           />
           <input

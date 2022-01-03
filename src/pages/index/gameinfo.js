@@ -42,13 +42,14 @@ const GameInfo = () => {
         {games.map((game, index) => {
           return (
             <div>
-              <div className="infolist">
+              <div className="infolist" key={index}>
                 <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
                   <Card.Body>
                     <Card.Title>{game.name}</Card.Title>
                     <Card.Text>チーム人数: {game.count}</Card.Text>
                     <Card.Text>場所: {game.place}</Card.Text>
-                    <Card.Text>id: {index}</Card.Text>
+                    <Card.Text>日時: {String(game.date).slice(4,6)}月{String(game.date)[6,8]}日</Card.Text>
+                    {/* この日付機能うまくできてない */}
                   </Card.Body>
                   <Button variant="primary" style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>
                 </Card>
@@ -62,7 +63,8 @@ const GameInfo = () => {
                   <Modal.Body>
                     <p>チーム名:{games[indexContent].name}</p>
                     <p>参加メンバー数:{games[indexContent].count}</p>
-                    <p>試合日{games[indexContent].date}</p>
+                    <p>試合日:{String(games[indexContent].date)[3,5]}月{String(games[indexContent].date)[5,7]}日</p>
+                    <p>費用:{games[indexContent].cost}円</p>
                   </Modal.Body>
                   <Modal.Footer>
                     <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
