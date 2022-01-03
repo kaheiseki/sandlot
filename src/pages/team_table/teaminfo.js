@@ -12,6 +12,8 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import { auth } from "../../firebase";
+import { signInWithEmailAndPassword ,onAuthStateChanged} from "firebase/auth";
 
 const TeamInfo = () => {
   const [teams, setTeams] = useState([]);
@@ -23,6 +25,14 @@ const TeamInfo = () => {
   useEffect(() => {
     getTeams();
   },[]);
+
+  onAuthStateChanged(auth,(user) => {
+    if(user){
+      alert("ログインしています");
+    }else{
+      // alert("ログインしていません");
+    }
+  })
 
   return(
     <div>
