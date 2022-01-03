@@ -43,7 +43,7 @@ export const CreateGamePost = () => {
 
   return (
     <div className='CreateGamePost'>
-      <Card style={{ width: "40rem" , height:"15rem",borderRadius:"10px"}}>
+      <Card className="create_game_card">
         <Card.Body>
           <Card.Title className='createGamePostTitle'>募集ゲーム作成</Card.Title>
           <input
@@ -65,7 +65,7 @@ export const CreateGamePost = () => {
           />
           <input
             className='form-control'
-            placeholder="Team name..."
+            placeholder="Team name"
             onChange={(event) => {
               setNewTeamName(event.target.value);
             }}
@@ -87,7 +87,7 @@ export const CreateGamePost = () => {
           <input
             className='form-control'
             type="number"
-            placeholder="Count..."
+            placeholder="Count"
             onChange={(event) => {
               setNewCount(event.target.value);
             }}
@@ -114,10 +114,7 @@ export const CreateGamePost = () => {
               Create Game
           </Button>
         </form>
-
       </Card>
-
-
     </div>
   );
 }

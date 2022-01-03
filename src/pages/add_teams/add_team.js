@@ -12,6 +12,8 @@ import {
 } from "firebase/firestore";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
+import './add_team.css';
+
 
 export const AddTeam = () => {
 
@@ -26,8 +28,8 @@ export const AddTeam = () => {
   };
 
   return(
-    <div className='CreateGamePost'>
-      <Card style={{ width: "40rem" , height:"15rem",borderRadius:"10px"}}>
+    <div>
+      <Card className='add_team_card'>
         <Card.Body>
           <Card.Title className='createGamePostTitle'>新規チーム作成</Card.Title>
           <input
