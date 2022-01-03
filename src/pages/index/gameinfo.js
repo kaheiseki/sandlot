@@ -1,5 +1,5 @@
 import React from "react";
-import {Card,Button} from 'react-bootstrap';
+import {Card,Button, Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from "react";
 import { db } from "../../firebase";
@@ -27,6 +27,11 @@ const GameInfo = () => {
     getGames();
   }, []);
 
+  // modalに関するhooks
+  const [show, setShow] = useState(false);
+
+  const handleClose = ()=> setShow(false);
+  const handleShow = ()=> setShow(true);
   return(
     <div>
       <div className="gameInfoTitle">
@@ -35,16 +40,30 @@ const GameInfo = () => {
       <div className="container">
         {games.map((game) => {
           return (
-            <div className="infolist">
-              <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
-                <Card.Body>
-                  <Card.Title>{game.name}</Card.Title>
-                  <Card.Text>チーム人数: {game.count}</Card.Text>
-                  <Card.Text>場所: {game.place}</Card.Text>
-                </Card.Body>
-                <Button variant="primary" style = {{width:"120px"}}>詳細を見る</Button>
-              </Card>
+            <div>
+              <div className="infolist">
+                <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
+                  <Card.Body>
+                    <Card.Title>{game.name}</Card.Title>
+                    <Card.Text>チーム人数: {game.count}</Card.Text>
+                    <Card.Text>場所: {game.place}</Card.Text>
+                  </Card.Body>
+                  <Button variant="primary" style = {{width:"120px"}} onClick={handleShow}>詳細を見る</Button>
+                </Card>
+              </div>
+              <div>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>you're reading this text in a modl</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
+              </div>
             </div>
+
           );
         })}
       </div>
