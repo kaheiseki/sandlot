@@ -5,11 +5,7 @@ import { useState, useEffect } from "react";
 import { db } from "../../firebase";
 import {
   collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
+  getDocs
 } from "firebase/firestore";
 import './gameinfo.css';
 
@@ -29,16 +25,21 @@ const GameInfo = () => {
 
   // modalに関するhooks
   const [show, setShow] = useState(false);
+  const [indexContent, setIndexContent] = useState(0);
 
   const handleClose = ()=> setShow(false);
-  const handleShow = ()=> setShow(true);
+  const handleShow = (index)=> {
+    setShow(true);
+    setIndexContent(index);
+  }
+
   return(
     <div>
       <div className="gameInfoTitle">
         試合一覧
       </div>
       <div className="container">
-        {games.map((game) => {
+        {games.map((game, index) => {
           return (
             <div>
               <div className="infolist">
@@ -47,18 +48,24 @@ const GameInfo = () => {
                     <Card.Title>{game.name}</Card.Title>
                     <Card.Text>チーム人数: {game.count}</Card.Text>
                     <Card.Text>場所: {game.place}</Card.Text>
+                    <Card.Text>id: {index}</Card.Text>
                   </Card.Body>
-                  <Button variant="primary" style = {{width:"120px"}} onClick={handleShow}>詳細を見る</Button>
+                  <Button variant="primary" style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>
                 </Card>
               </div>
+              {/* modalについての記述 */}
               <div>
-                <Modal show={show} onHide={handleClose}>
+                <Modal show={show} onHide={handleClose} game={game}>
                   <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>you're reading this text in a modl</Modal.Body>
+                  <Modal.Body>
+                    <p>チーム名:{games[indexContent].name}</p>
+                    <p>参加メンバー数:{games[indexContent].count}</p>
+                    <p>試合日{games[indexContent].date}</p>
+                  </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
+                    <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
                   </Modal.Footer>
                 </Modal>
               </div>
