@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {Card,Button} from 'react-bootstrap';
+import {Card,Button, Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './teaminfo.css';
 import { db } from "../../firebase";
@@ -33,6 +33,15 @@ const TeamInfo = () => {
       // alert("ログインしていません");
     }
   })
+  // modalに関するhooks
+  const [show, setShow] = useState(false);
+  const [indexContent, setIndexContent] = useState(0);
+
+  const handleClose = ()=> setShow(false);
+  const handleShow = (index)=> {
+    setShow(true);
+    setIndexContent(index);
+  }
 
   return(
     <div>
@@ -40,17 +49,36 @@ const TeamInfo = () => {
         チーム一覧
       </div>
       <div className="container">
-        {teams.map((team) => {
+        {teams.map((team,index) => {
           return (
-            <div className="infolist">
-              <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
-                <Card.Body>
-                  <Card.Title>{team.name}</Card.Title>
-                  <Card.Text>チーム人数: {team.count}</Card.Text>
-                  <Card.Text>場所: {team.place}</Card.Text>
-                </Card.Body>
-                <Button variant="primary" style = {{width:"120px"}}>詳細を見る</Button>
-              </Card>
+            <div>
+              <div className="infolist">
+                <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
+                  <Card.Body>
+                    <Card.Title>{team.name}</Card.Title>
+                    <Card.Text>チーム人数: {team.count}</Card.Text>
+                    <Card.Text>場所: {team.place}</Card.Text>
+                  </Card.Body>
+                  <Button variant="primary" style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>
+                </Card>
+              </div>
+              {/* modalについての記述 */}
+              <div>
+                <Modal show={show} onHide={handleClose} team={team}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <p>チーム名:{teams[indexContent].name}</p>
+                    <p>参加メンバー数:{teams[indexContent].count}</p>
+                    <p>試合日:{String(teams[indexContent].date)[3,5]}月{String(teams[indexContent].date)[5,7]}日</p>
+                    <p>費用:{teams[indexContent].cost}円</p>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
+              </div>
             </div>
           );
         })}
