@@ -69,9 +69,9 @@ const TeamInfo = () => {
                     <Modal.Title>{teams[indexContent].name}</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
-                    <p>メンバー数:{teams[indexContent].count}</p>
-                    <p>本拠地:{teams[indexContent].place}</p>
-                    <p>代表者:{teams[indexContent].captain}</p>
+                    <p>メンバー数：{teams[indexContent].count}</p>
+                    <p>本拠地：{teams[indexContent].place}</p>
+                    <p>代表者：{teams[indexContent].captain}</p>
                   </Modal.Body>
                   <Modal.Footer>
                     <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
