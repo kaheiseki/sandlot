@@ -25,8 +25,6 @@ export const Login = () => {
       const user = userCredential.user;
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
       alert(error.code);
       // catchで終わらないで
     });

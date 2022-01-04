@@ -5,28 +5,76 @@ import { db } from '../../firebase'
 import { collection,getDocs,query,where } from 'firebase/firestore'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import {Card,Button} from 'react-bootstrap';
+import { unstable_batchedUpdates } from 'react-dom'
 
 export const MyTeam = () => {
 
-  const [username,setUsername] = useState("");
+  const [uid,setUid] = useState("");
+  const [teamname,setTeamname] = useState("");
+  const [place,setPlace] = useState("");
+  const [count,setCount] = useState(0);
+  const [captain,setCaptain] = useState("");
   onAuthStateChanged(auth,async (user) => {
     if(user){
-      const uid = user.uid;
-      const email = user.email;
-      const q = query(collection(db, "Users"),where("id","==",uid));
+      setUid(user.uid);
+      const q = query(collection(db, "Teams"),where("userid","==",uid));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc)=>{
-        setUsername(doc.data().name);
-        console.log(username);
+        setTeamname(doc.data().name);
+        setPlace(doc.data().place);
+        setCount(doc.data().count);
+        setCaptain(doc.data().captain);
       });
+      
     }
   })
+  
+  const upDate = ()=>{
+
+  }
 
   return (
     <div>
-    {username}
-      This is my team page.
-      チーム削除機能
+    <Card className='add_team_card'>
+        <Card.Body>
+          <Card.Title className='create_game_post_title'>My team</Card.Title>
+          <input
+            className='form-control'
+            value={teamname}
+            onChange={(event) => {
+              setTeamname(event.target.value);
+            }}
+          />
+          <input
+            className='form-control'
+            value = {place}
+            onChange={(event) => {
+              setPlace(event.target.value);
+            }}
+          />
+          <input
+            className='form-control'
+            type="number"
+            value = {count}
+            onChange={(event) => {
+              setCount(event.target.value);
+            }}
+          />
+          <input
+            className='form-control'
+            value={captain}
+            onChange={(event) => {
+              setCaptain(event.target.value);
+            }}
+          />
+        </Card.Body>
+        <form>
+          <Button onClick={() => upDate()}>
+              Update team
+          </Button>
+        </form>
+      </Card>
     </div>
   )
 }

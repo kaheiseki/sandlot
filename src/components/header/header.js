@@ -6,13 +6,17 @@ import { auth, db } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import { collection,getDocs,query,where } from 'firebase/firestore'
 import { useState } from 'react'
+import { Logout } from "../../pages/logout/logout";
 
 // import { Link } from "react-router-dom";
 
 
 // ヘッダーを表示するコンポーネント
 const Header = ({isLogin, username}) => {
-
+  const LogOut = () => {
+    console.log("logout");
+    auth.signOut();
+  }
   if(isLogin){
     return(
       <Navbar collapseOnSelect expand="lg" className="header_outline">
@@ -27,8 +31,7 @@ const Header = ({isLogin, username}) => {
               <Nav.Link href="/myteam" className="headerContents">MyTeam</Nav.Link>
               <Nav.Link href="/creategame" className="headerContents">Post game</Nav.Link>
               <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
-              <Nav.Link href="/login" className="headerContents">Log in</Nav.Link>
-              <Nav.Link href="/signup" className="headerContents">Sign up</Nav.Link>
+              <Nav.Link href="/login" className="headerContents" onClick={()=>LogOut()}>Log out</Nav.Link>
               {username}
             </Nav>
           </div>
