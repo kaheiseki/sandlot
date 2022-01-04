@@ -27,7 +27,6 @@ const Header = () => {
       });
     }
   })
-
   if(isLogin){
     return(
       <Navbar collapseOnSelect expand="lg" className="header_outline">
