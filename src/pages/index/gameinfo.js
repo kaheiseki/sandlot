@@ -2,11 +2,13 @@ import React from "react";
 import {Card,Button, Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from "react";
-import { db } from "../../firebase";
+import { auth, db } from "../../firebase";
 import {
   collection,
   getDocs
 } from "firebase/firestore";
+
+import { onAuthStateChanged } from "firebase/auth";
 import './gameinfo.css';
 
 
@@ -19,7 +21,6 @@ const GameInfo = () => {
       const data = await getDocs(gamesCollectionRef);
       setGames(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
-
     getGames();
   }, []);
 
@@ -32,7 +33,7 @@ const GameInfo = () => {
     setShow(true);
     setIndexContent(index);
   }
-
+  
   return(
     <div>
       <div className="gameInfoTitle">

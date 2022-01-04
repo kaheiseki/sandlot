@@ -8,15 +8,12 @@ import { useState } from 'react'
 
 export const MyTeam = () => {
   const [teamname,setTeamname] = useState("");
-  const user = auth.currentUser;
-  const teamsCollectionRef = collection(db, "Teams");
-  const getMyTeam = async () => {
-    const data = await getDocs(teamsCollectionRef).where("userid","==",user.uid);
-    setTeamname(data.name);
-  };
-  useEffect(() => {
-    getMyTeam();
-  },[]);
+  onAuthStateChanged(auth,(user) => {
+    if(user){
+      const uid = user.uid;
+      console.log(uid)
+    }
+  })
 
   return (
     <div>
