@@ -20,11 +20,12 @@ export const AddTeam = () => {
   const [newTeamName, setNewTeamName] = useState("");
   const [newCount, setNewCount] = useState(0);
   const [newPlace, setNewPlace] = useState("");
+  const [newCaptain, setNewCaptain] = useState("");
 
   const gamesCollectionRef = collection(db, "Teams");
 
   const createTeam = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount) });
+    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain });
   };
 
   return(
@@ -52,6 +53,13 @@ export const AddTeam = () => {
             placeholder="Count..."
             onChange={(event) => {
               setNewCount(event.target.value);
+            }}
+          />
+          <input
+            className='form-control'
+            placeholder="Representative"
+            onChange={(event) => {
+              setNewCaptain(event.target.value);
             }}
           />
         </Card.Body>
