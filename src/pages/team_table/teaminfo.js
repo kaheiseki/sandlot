@@ -66,13 +66,12 @@ const TeamInfo = () => {
               <div>
                 <Modal show={show} onHide={handleClose} team={team}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>{teams[indexContent].name}</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
-                    <p>チーム名:{teams[indexContent].name}</p>
-                    <p>参加メンバー数:{teams[indexContent].count}</p>
-                    <p>試合日:{String(teams[indexContent].date)[3,5]}月{String(teams[indexContent].date)[5,7]}日</p>
-                    <p>費用:{teams[indexContent].cost}円</p>
+                    <p>メンバー数:{teams[indexContent].count}</p>
+                    <p>本拠地:{teams[indexContent].place}</p>
+                    <p>代表者:{teams[indexContent].captain}</p>
                   </Modal.Body>
                   <Modal.Footer>
                     <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
