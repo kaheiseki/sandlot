@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 
 export const MyTeam = () => {
+
   const [username,setUsername] = useState("");
   onAuthStateChanged(auth,async (user) => {
     if(user){

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useState } from "react";
 import { auth } from "../../firebase";
-import { signInWithEmailAndPassword} from "firebase/auth";
+import { signInWithEmailAndPassword,signOut} from "firebase/auth";
 import './login.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Card,Button} from 'react-bootstrap';
@@ -30,6 +30,9 @@ export const Login = () => {
     });
   };
 
+  const LogOut = () => {
+    auth.signOut();
+  }
 
   return (
     <div className='form_outline'>
@@ -59,6 +62,9 @@ export const Login = () => {
           <form>
             <Button type="submit" className="btn btn-primary btn-block" onClick={LogIn(email,password)}>
               Submit
+            </Button>
+            <Button type="submit" className="btn btn-primary btn-block" onClick={LogOut()}>
+              Logout
             </Button>
           </form>
       </Card>
