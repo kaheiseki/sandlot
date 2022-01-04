@@ -1,0 +1,34 @@
+*{
+  color: #ffffff;
+}
+.form_outline{
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 10px;
+  /* outline: 0.1rem solid #b9b9b9; */
+  width: 400px;
+  margin: 0 auto;
+}
+
+.signup_title{
+  font-size: 35px !important;
+  text-align: center;
+}
+
+label{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.form-group{
+  margin: 0px 20px 15px 20px;
+  text-align: left;
+}
+Button{
+  background-color: #88b940 !important;
+  width: 180px !important;
+  border-radius: 20px!important;
+}
+Button:hover{
+  color: #000000 !important;
+  background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+}

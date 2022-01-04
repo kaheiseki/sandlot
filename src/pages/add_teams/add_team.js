@@ -43,7 +43,7 @@ console.log(userId);
     <div>
       <Card className='add_team_card'>
         <Card.Body>
-          <Card.Title className='createGamePostTitle'>新規チーム作成</Card.Title>
+          <Card.Title className='create_game_post_title'>Add team</Card.Title>
           <input
             className='form-control'
             placeholder="Team name..."

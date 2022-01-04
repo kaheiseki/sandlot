@@ -10,6 +10,9 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import { Card , Button} from 'react-bootstrap';
+import './signup.css';
+
 
 
 export const SignUp = () => {
@@ -55,30 +58,38 @@ export const SignUp = () => {
     }
   }
   return(
-    <div>
-      <form className='form-groups'>
-        <div className='form-group'>
-          <label>User Name</label>
-          <input className='form-control' placeholder="Username" onChange={inputUsername}/>
-        </div>
+    <div className='form_outline'>
+      <Card>
+        <Card.Body>
+          <Card.Title className='signup_title'>
+            Sign Up
+          </Card.Title>
+          <div className='form-group'>
+            <label>User Name</label>
+            <input className='form-control' placeholder="Username" onChange={inputUsername}/>
+          </div>
 
-        <div className='form-group'>
-            <label>Email</label>
-            <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
-        </div>
+          <div className='form-group'>
+              <label>Email</label>
+              <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
+          </div>
 
-        <div className='form-group'>
-            <label>Password</label>
-            <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
-        </div>
+          <div className='form-group'>
+              <label>Password</label>
+              <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
+          </div>
 
-        <div className='form-group'>
-            <label>Password（確認用）</label>
-            <input type="password" className='form-control' placeholder="Enter password (確認用)" onChange={inputConfirmPassword}/>
-        </div>
-
-        <button type="button" className="btn btn-primary btn-block" onClick={Signup(username,email,password,confirmPassword)}>Register</button>
-      </form>
+          <div className='form-group'>
+              <label>Password（Confirm）</label>
+              <input type="password" className='form-control' placeholder="Enter password (Confirm)" onChange={inputConfirmPassword}/>
+          </div>
+        </Card.Body>
+          <form>
+            <Button type="button" className="btn btn-primary btn-block" onClick={Signup(username,email,password,confirmPassword)}>
+              Register
+            </Button>
+          </form>
+      </Card>
     </div>
     // ↑消さないで。
     // <div>
