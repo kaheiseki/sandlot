@@ -1,12 +1,28 @@
 *{
-  font-family: sans-serif;
-}
-.headerText{
-  margin-left: 20px;
-  color: #88b940;
+  font-family: 'Arial Rounded MT Bold',sans-serif;}
+.header_outline{
+  background-color: black;
 }
 
-.headerContents{
+.headerText{
+  font-weight: bold;
   margin-left: 20px;
-  color: #ffffff;
+  color: #45be35 !important;
+}
+
+.mr-auto{}
+
+.headerContents{
+  justify-content: flex-end;
+  float: right !important;
+  border-radius: 10px;
+  /* background-color: #88b940; */
+  outline: #3e3e3e;
+  margin-left: 20px;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+.headerContents:hover{
+  background-color: #45be35;
+  color: black !important; 
 }
