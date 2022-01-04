@@ -64,9 +64,6 @@ export const Login = () => {
             <Button type="button" className="btn btn-primary btn-block" onClick={()=>LogIn(email,password)}>
               Submit
             </Button>
-            <Button type="button" className="btn btn-primary btn-block" onClick={()=>LogOut()}>
-              Logout
-            </Button>
           </form>
       </Card>
     </div>
