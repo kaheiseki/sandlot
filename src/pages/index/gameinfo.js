@@ -33,7 +33,6 @@ const GameInfo = () => {
     setShow(true);
     setIndexContent(index);
   }
-  
   return(
     <div>
       <div className="gameInfoTitle">

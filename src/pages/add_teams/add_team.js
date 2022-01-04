@@ -23,22 +23,22 @@ export const AddTeam = () => {
   const [newCount, setNewCount] = useState(0);
   const [newPlace, setNewPlace] = useState("");
   const [newCaptain, setNewCaptain] = useState("");
-  const [userid,setUserid] = useState("");
+  const [userId,setUserId] = useState("");
 
   const gamesCollectionRef = collection(db, "Teams");
   onAuthStateChanged(auth,(user)=>{
     if(user){
       const uid = user.uid;
-      setUserid(uid);
+      setUserId(uid);
     }
   })
 
 
   const createTeam = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain,userid:userid});
+    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, userid:userId});
   };
 
-
+console.log(userId);
   return(
     <div>
       <Card className='add_team_card'>
