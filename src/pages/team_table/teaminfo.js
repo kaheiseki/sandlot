@@ -26,13 +26,6 @@ const TeamInfo = () => {
     getTeams();
   },[]);
 
-  onAuthStateChanged(auth,(user) => {
-    if(user){
-      alert("ログインしています");
-    }else{
-      // alert("ログインしていません");
-    }
-  })
   // modalに関するhooks
   const [show, setShow] = useState(false);
   const [indexContent, setIndexContent] = useState(0);

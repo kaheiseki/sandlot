@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useState } from "react";
-import {createUserWithEmailAndPassword} from "firebase/auth"
+import {createUserWithEmailAndPassword,onAuthStateChanged} from "firebase/auth"
 import {auth, db} from "../../firebase";
 import {
   collection,

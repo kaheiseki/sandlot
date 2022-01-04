@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import { db } from "../../firebase";
-
 import {
   collection,
   getDocs,
@@ -10,6 +9,9 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import { auth } from '../../firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
 import './add_team.css';
@@ -21,12 +23,21 @@ export const AddTeam = () => {
   const [newCount, setNewCount] = useState(0);
   const [newPlace, setNewPlace] = useState("");
   const [newCaptain, setNewCaptain] = useState("");
+  const [userid,setUserid] = useState("");
 
   const gamesCollectionRef = collection(db, "Teams");
+  onAuthStateChanged(auth,(user)=>{
+    if(user){
+      const uid = user.uid;
+      setUserid(uid);
+    }
+  })
+
 
   const createTeam = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain });
+    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain,userid:userid});
   };
+
 
   return(
     <div>
