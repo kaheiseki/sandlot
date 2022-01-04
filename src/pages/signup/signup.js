@@ -50,43 +50,43 @@ export const SignUp = () => {
         addDoc(usersCollectionRef, { name:username, id:user.uid});
       })
       .catch((error) => {
-        alert("入力が不正です")
+        alert(error.code)
       })
     }
   }
   return(
-    // <div>
-    //   <form className='form-groups'>
-    //     <div className='form-group'>
-    //       <label>User Name</label>
-    //       <input className='form-control' placeholder="Username" onChange={inputUsername}/>
-    //     </div>
-
-    //     <div className='form-group'>
-    //         <label>Email</label>
-    //         <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
-    //     </div>
-
-    //     <div className='form-group'>
-    //         <label>Password</label>
-    //         <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
-    //     </div>
-
-    //     <div className='form-group'>
-    //         <label>Password（確認用）</label>
-    //         <input type="password" className='form-control' placeholder="Enter password (確認用)" onChange={inputConfirmPassword}/>
-    //     </div>
-
-    //     <button type="submit" className="btn btn-primary btn-block" onClick={Signup(username,email,password,confirmPassword)}>Register</button>
-    //   </form>
-    // </div>
-    // ↑消さないで。
     <div>
-      <input className='form-control' placeholder="ユーザー名" onChange={inputUsername}/>
-      <input className='form-control' placeholder="メールアドレス" onChange={inputEmail}/>
-      <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
-      <input className='form-control' placeholder="パスワード（確認用）" onChange={inputConfirmPassword}/>
-      <button className = "button" onClick = {Signup(username,email,password,confirmPassword)}>ユーザー登録</button>
+      <form className='form-groups'>
+        <div className='form-group'>
+          <label>User Name</label>
+          <input className='form-control' placeholder="Username" onChange={inputUsername}/>
+        </div>
+
+        <div className='form-group'>
+            <label>Email</label>
+            <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
+        </div>
+
+        <div className='form-group'>
+            <label>Password</label>
+            <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
+        </div>
+
+        <div className='form-group'>
+            <label>Password（確認用）</label>
+            <input type="password" className='form-control' placeholder="Enter password (確認用)" onChange={inputConfirmPassword}/>
+        </div>
+
+        <button type="button" className="btn btn-primary btn-block" onClick={Signup(username,email,password,confirmPassword)}>Register</button>
+      </form>
     </div>
+    // ↑消さないで。
+    // <div>
+    //   <input className='form-control' placeholder="ユーザー名" onChange={inputUsername}/>
+    //   <input className='form-control' placeholder="メールアドレス" onChange={inputEmail}/>
+    //   <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
+    //   <input className='form-control' placeholder="パスワード（確認用）" onChange={inputConfirmPassword}/>
+    //   <button className = "button" onClick = {Signup(username,email,password,confirmPassword)}>ユーザー登録</button>
+    // </div>
   )
 };
