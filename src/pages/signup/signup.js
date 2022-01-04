@@ -55,6 +55,32 @@ export const SignUp = () => {
     }
   }
   return(
+    // <div>
+    //   <form className='form-groups'>
+    //     <div className='form-group'>
+    //       <label>User Name</label>
+    //       <input className='form-control' placeholder="Username" onChange={inputUsername}/>
+    //     </div>
+
+    //     <div className='form-group'>
+    //         <label>Email</label>
+    //         <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
+    //     </div>
+
+    //     <div className='form-group'>
+    //         <label>Password</label>
+    //         <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
+    //     </div>
+
+    //     <div className='form-group'>
+    //         <label>Password（確認用）</label>
+    //         <input type="password" className='form-control' placeholder="Enter password (確認用)" onChange={inputConfirmPassword}/>
+    //     </div>
+
+    //     <button type="submit" className="btn btn-primary btn-block" onClick={Signup(username,email,password,confirmPassword)}>Register</button>
+    //   </form>
+    // </div>
+    // ↑消さないで。
     <div>
       <input className='form-control' placeholder="ユーザー名" onChange={inputUsername}/>
       <input className='form-control' placeholder="メールアドレス" onChange={inputEmail}/>

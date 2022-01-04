@@ -20,6 +20,7 @@ const Header = () => {
               <Nav.Link href="/creategame" className="headerContents">Post game</Nav.Link>
               <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
               <Nav.Link href="/login" className="headerContents">Log in</Nav.Link>
+              <Nav.Link href="/signup" className="headerContents">Sign up</Nav.Link>
           </Nav>
       </Navbar.Collapse>
     </Navbar>
