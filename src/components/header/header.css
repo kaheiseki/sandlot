@@ -12,7 +12,9 @@
   font-weight: bold;
   margin-left: 15%;
   color: #45be35 !important;
+
 }
+
 .headerText:hover{
   color: #88b940 !important;
   background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
@@ -38,4 +40,19 @@
 .headerContents:hover{
   background-color: #45be35;
   color: black !important; 
+}
+
+@media (max-width:1400px) {
+  .headerText{
+    font-size: 30px;
+  }
+  .headerContents{
+    font-size: 16px;
+  }
+}
+
+@media (max-width:1200px) {
+  .headerContents{
+    font-size: 15px;
+  }
 }

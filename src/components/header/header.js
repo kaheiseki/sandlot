@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './header.css';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 // ヘッダーを表示するコンポーネント
