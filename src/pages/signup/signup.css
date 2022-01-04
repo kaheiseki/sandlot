@@ -8,6 +8,8 @@
   /* outline: 0.1rem solid #b9b9b9; */
   width: 400px;
   margin: 0 auto;
+  border: none !important;
+  outline: none !important;
 }
 
 .signup_title{
@@ -23,8 +25,11 @@ label{
   margin: 0px 20px 15px 20px;
   text-align: left;
 }
+.form-control{
+  border: 3px solid #45be35;
+}
 Button{
-  background-color: #88b940 !important;
+  background-color: #45be35 !important;
   width: 180px !important;
   border-radius: 20px!important;
 }

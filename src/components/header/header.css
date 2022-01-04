@@ -32,8 +32,8 @@
   border-radius: 10px;
   /* background-color: #88b940; */
   outline: #3e3e3e;
-  padding-left:10px ;
-  margin-left: 18px;
+  margin-left: 5px;
+  border: 10px;
   font-weight: bold;
   color: #ffffff !important;
 }

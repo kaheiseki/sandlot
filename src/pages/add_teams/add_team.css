@@ -6,3 +6,10 @@
 .create_game_post_title{
   font-size: 35px;
 }
+
+Button{
+  background-color: #45be35 !important;
+  border-color: #45be35!important;
+  width: 180px;
+  border-radius: 20px;
+}

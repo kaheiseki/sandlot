@@ -75,7 +75,7 @@ console.log(userId);
           />
         </Card.Body>
         <form>
-          <Button variant="primary" style = {{width:"180px"}} onClick={createTeam}>
+          <Button onClick={createTeam}>
               Create team
           </Button>
         </form>
