@@ -1,6 +1,6 @@
 .form_outline{
   /* border: 1px black solid; */
-  outline: 0.5px solid;
+  outline: 0.1rem solid #b9b9b9;
   width: 400px;
   margin: 0 auto;
   border-radius: 3%;
