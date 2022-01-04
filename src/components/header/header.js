@@ -2,11 +2,30 @@ import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './header.css';
+import { auth, db } from '../../firebase'
+import { onAuthStateChanged } from 'firebase/auth'
+import { collection,getDocs,query,where } from 'firebase/firestore'
+import { useState } from 'react'
+
 // import { Link } from "react-router-dom";
 
 
 // ヘッダーを表示するコンポーネント
 const Header = () => {
+  const [username,setUsername] = useState("");
+  onAuthStateChanged(auth,async (user) => {
+    if(user){
+      const uid = user.uid;
+      const email = user.email;
+      const q = query(collection(db, "Users"),where("id","==",uid));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc)=>{
+        setUsername(doc.data().name);
+        console.log(username);
+      });
+    }
+  })
+
   return(
     <Navbar collapseOnSelect expand="lg" className="header_outline">
       <Navbar.Brand href="/home" className="headerText">
@@ -22,6 +41,7 @@ const Header = () => {
             <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
             <Nav.Link href="/login" className="headerContents">Log in</Nav.Link>
             <Nav.Link href="/signup" className="headerContents">Sign up</Nav.Link>
+            {username}
           </Nav>
         </div>
       </Navbar.Collapse>

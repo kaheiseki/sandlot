@@ -39,7 +39,7 @@ const TeamInfo = () => {
   return(
     <div>
       <div className="gameInfoTitle">
-        チーム一覧
+        Team Table
       </div>
       <div className="container">
         {teams.map((team,index) => {
@@ -52,7 +52,7 @@ const TeamInfo = () => {
                     <Card.Text>チーム人数: {team.count}</Card.Text>
                     <Card.Text>場所: {team.place}</Card.Text>
                   </Card.Body>
-                  <Button variant="primary" style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>
+                  <Button style = {{width:"120px"}} onClick={()=>handleShow(index)}>Detail</Button>
                 </Card>
               </div>
               {/* modalについての記述 */}
@@ -67,7 +67,7 @@ const TeamInfo = () => {
                     <p>代表者：{teams[indexContent].captain}</p>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
+                    <Button onClick={()=>handleClose()}>Close</Button>
                   </Modal.Footer>
                 </Modal>
               </div>
