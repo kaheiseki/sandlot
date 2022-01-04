@@ -39,7 +39,7 @@
 }
 .headerContents:hover{
   background-color: #45be35;
-  color: black !important; 
+  color: black !important;
 }
 
 @media (max-width:1400px) {

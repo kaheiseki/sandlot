@@ -24,7 +24,6 @@ const Header = () => {
             <Nav.Link href="/signup" className="headerContents">Sign up</Nav.Link>
           </Nav>
         </div>
-
       </Navbar.Collapse>
     </Navbar>
   );

@@ -24,6 +24,7 @@
 .form-control{
   margin-left: 5px;
   margin-bottom: 3px;
+  background-color: black !important;
 }
 
 .create_game_button{
@@ -33,4 +34,12 @@
   border-color: #88b940;
   width: 180px;
   border-radius: 20px;
+}
+.create_game_button:hover{
+  color: #000000;
+  background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+}
+
+::placeholder {
+  color: #6c9867 !important;
 }
