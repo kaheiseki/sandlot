@@ -27,10 +27,13 @@ export const Login = () => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      alert(error.code);
+      // catchで終わらないで
     });
   };
 
   const LogOut = () => {
+    console.log("logout");
     auth.signOut();
   }
 
@@ -43,12 +46,12 @@ export const Login = () => {
           </Card.Title>
           <div className='form-group'>
             <label>Email address</label>
-            <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
+            <input type="email" className='form-control' placeholder="Enter email" onChange={(e)=>inputEmail(e)}/>
           </div>
 
           <div className='form-group'>
               <label>Password</label>
-              <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
+              <input type="password" className='form-control' placeholder="Enter password" onChange={(e)=>inputPassword(e)}/>
           </div>
 
           <div className='form-group'>
@@ -60,10 +63,10 @@ export const Login = () => {
           </div>
         </Card.Body>
           <form>
-            <Button type="submit" className="btn btn-primary btn-block" onClick={LogIn(email,password)}>
+            <Button type="button" className="btn btn-primary btn-block" onClick={()=>LogIn(email,password)}>
               Submit
             </Button>
-            <Button type="submit" className="btn btn-primary btn-block" onClick={LogOut()}>
+            <Button type="button" className="btn btn-primary btn-block" onClick={()=>LogOut()}>
               Logout
             </Button>
           </form>

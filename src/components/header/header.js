@@ -11,22 +11,8 @@ import { useState } from 'react'
 
 
 // ヘッダーを表示するコンポーネント
-const Header = () => {
-  const [username,setUsername] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
-  onAuthStateChanged(auth,async (user) => {
-    if(user){
-      setIsLogin(true);
-      const uid = user.uid;
-      const email = user.email;
-      const q = query(collection(db, "Users"),where("id","==",uid));
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc)=>{
-        setUsername(doc.data().name);
-        console.log(username);
-      });
-    }
-  })
+const Header = ({isLogin, username}) => {
+
   if(isLogin){
     return(
       <Navbar collapseOnSelect expand="lg" className="header_outline">
@@ -65,7 +51,7 @@ const Header = () => {
               <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
               <Nav.Link href="/login" className="headerContents">Log in</Nav.Link>
               <Nav.Link href="/signup" className="headerContents">Sign up</Nav.Link>
-              {username}
+
             </Nav>
           </div>
         </Navbar.Collapse>

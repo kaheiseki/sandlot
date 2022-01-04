@@ -14,13 +14,32 @@ import { SignUp } from "./pages/signup/signup";
 import { Login } from "./pages/login/login";
 import { Logout } from "./pages/logout/logout";
 import TestSignUp from "./test/test";
-
+import { auth, db } from './firebase'
+import { onAuthStateChanged } from 'firebase/auth'
+import { collection,getDocs,query,where } from 'firebase/firestore'
 
 const App = () => {
+  const [username,setUsername] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
+  onAuthStateChanged(auth,async (user) => {
+    console.log("before")
+    if(user){
+      setIsLogin(true);
+      const uid = user.uid;
+      const email = user.email;
+      const q = query(collection(db, "Users"),where("id","==",uid));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc)=>{
+        setUsername(doc.data().name);
+        console.log(username);
+      });
+    }else{
+      setIsLogin(false);
+    }
+  })
   return(
     <div>
-
-      <Header/>
+      <Header isLogin={isLogin} username={username}/>
       <div>
         <BrowserRouter>
           <Routes>

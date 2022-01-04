@@ -36,7 +36,7 @@ export const CreateGamePost = () => {
     setNewTeamName("");
     setNewPlace("");
     setNewHelper(0);
-
+    //変数変えてるだけ
   };
 
 
@@ -111,7 +111,7 @@ export const CreateGamePost = () => {
           />
         </Card.Body>
         <form>
-          <Button className='create_game_button' onClick={createGame} autoFocus>
+          <Button className='create_game_button' onClick={()=>createGame()} autoFocus>
             {/* autoFocusしたい */}
               Create Game
           </Button>
