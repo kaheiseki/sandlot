@@ -1,18 +1,33 @@
+*{
+  font-family: 'Arial Rounded MT Bold',sans-serif;
+  background-color: black;
+}
 .CreateGamePost{
+  margin-top: 20px;
   text-align: center;
-  /* height: 800px; */
-  /* margin: 0 auto; */
-  outline: none;
+  /* outline: none; */
+  border-radius: 10px;
+  border: black 1px solid;
 }
 .create_game_card{
   width: 400px;
   margin: 0 auto;
+  border-color: #45be35 ;
+  border-width:5px ;
 }
 
 .createGamePostTitle{
+  color: #ffffff;
   margin-left: 5px;
 }
 .form-control{
   margin-left: 5px;
   margin-bottom: 3px;
+}
+
+.create_game_button{
+  background-color: #45be35 !important;
+  border-color: #45be35;
+  width: 180px;
+  border-radius: 20px;
 }

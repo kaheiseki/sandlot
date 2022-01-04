@@ -45,7 +45,9 @@ export const CreateGamePost = () => {
     <div className='CreateGamePost'>
       <Card className="create_game_card">
         <Card.Body>
-          <Card.Title className='createGamePostTitle'>募集ゲーム作成</Card.Title>
+          <Card.Title className='createGamePostTitle'>
+            Make a Game
+          </Card.Title>
           <input
             className='form-control'
             type="number"
@@ -109,7 +111,7 @@ export const CreateGamePost = () => {
           />
         </Card.Body>
         <form>
-          <Button variant="primary" style = {{width:"180px"}} onClick={createGame} autoFocus>
+          <Button className='create_game_button' onClick={createGame} autoFocus>
             {/* autoFocusしたい */}
               Create Game
           </Button>
