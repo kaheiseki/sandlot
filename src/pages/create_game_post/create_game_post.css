@@ -12,7 +12,8 @@
 .create_game_card{
   width: 400px;
   margin: 0 auto;
-  border-color: #45be35 ;
+  border-color: #88b940 ;
+  /* border-color: #45be35 ; */
   border-width:5px ;
 }
 
@@ -26,8 +27,10 @@
 }
 
 .create_game_button{
-  background-color: #45be35 !important;
-  border-color: #45be35;
+  /* background-color: #45be35 !important; */
+  background-color: #88b940 !important;
+  /* border-color: #45be35; */
+  border-color: #88b940;
   width: 180px;
   border-radius: 20px;
 }

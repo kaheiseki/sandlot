@@ -4,18 +4,34 @@
   background-color: black;
 }
 
+.header_outline{
+  height: 100px;
+}
 .headerText{
+  font-size: 40px;
   font-weight: bold;
-  margin-left: 20px;
+  margin-left: 15%;
   color: #45be35 !important;
 }
+.headerText:hover{
+  color: #88b940 !important;
+  background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header_contents_outline{
+  margin-right: 15%;
+  margin-left: auto;
+}
 .headerContents{
+  font-size: 20px;
   justify-content: flex-end;
   float: right !important;
   border-radius: 10px;
   /* background-color: #88b940; */
   outline: #3e3e3e;
-  margin-left: 20px;
+  padding-left:10px ;
+  margin-left: 18px;
   font-weight: bold;
   color: #ffffff !important;
 }
