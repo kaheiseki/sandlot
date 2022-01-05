@@ -4,17 +4,11 @@ import {createUserWithEmailAndPassword,onAuthStateChanged} from "firebase/auth"
 import {auth, db} from "../../firebase";
 import {
   collection,
-  getDocs,
   addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
 import { Card , Button} from 'react-bootstrap';
 import './signup.css';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { AddTeam } from '../add_teams/add_team';
 
 
 export const SignUp = () => {
@@ -49,44 +43,47 @@ export const SignUp = () => {
       if (password !== confirmPassword){
         alert("パスワードが一致しません")
         return false
+      }else{
+        return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
+          const user = userCredential.user;
+          const usersCollectionRef = collection(db, "Users");
+          addDoc(usersCollectionRef, { name:username, id:user.uid});
+          setUsername("");
+          setEmail("");
+          setPassword("");
+          setConfirmPassword("");
+          console.log("signup succeed");
+        })
+        .catch((error) => {
+          alert(error.code)
+        })
       }
-      return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
-        const user = userCredential.user;
-        const usersCollectionRef = collection(db, "Users");
-        addDoc(usersCollectionRef, { name:username, id:user.uid});
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-      })
-      .catch((error) => {
-        alert(error.code)
-      })
     }
   }
   //add_teamのhooks
-  const [newTeamName, setNewTeamName] = useState("");
-  const [newCount, setNewCount] = useState(0);
-  const [newPlace, setNewPlace] = useState("");
-  const [newCaptain, setNewCaptain] = useState("");
-  const [userId,setUserId] = useState("");
+  // const [newTeamName, setNewTeamName] = useState("");
+  // const [newCount, setNewCount] = useState(0);
+  // const [newPlace, setNewPlace] = useState("");
+  // const [newCaptain, setNewCaptain] = useState("");
+  // const [userId,setUserId] = useState("");
 
-  const gamesCollectionRef = collection(db, "Teams");
-  onAuthStateChanged(auth,(user)=>{
-    if(user){
-      const uid = user.uid;
-      setUserId(uid);
-    }
-  })
+  // const gamesCollectionRef = collection(db, "Teams");
+  // onAuthStateChanged(auth,(user)=>{
+  //   if(user){
+  //     const uid = user.uid;
+  //     setUserId(uid);
+  //   }
+  // })
 
 
-  const createTeam = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, userid:userId});
-    setNewTeamName("");
-    setNewCount("");
-    setNewPlace("");
-    setNewCaptain("");
-  };
+  // const createTeam = async () => {
+  //   await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, id: userId});
+  //   setNewTeamName("");
+  //   setNewCount("");
+  //   setNewPlace("");
+  //   setNewCaptain("");
+  //   console.log("add team succeed");
+  // };
   return(
     <div className='form_outline'>
       <Card className='form_groups'>
@@ -115,7 +112,7 @@ export const SignUp = () => {
           </div>
         </Card.Body>
       </Card>
-      <Card className='add_team_card'>
+      {/* <Card className='add_team_card'>
         <Card.Body>
           <Card.Title className='create_game_post_title'>Team Register</Card.Title>
           <div className='form-group'>
@@ -163,15 +160,17 @@ export const SignUp = () => {
               }}
             />
           </div>
-        </Card.Body>
+        </Card.Body> */}
         <form>
-          <Button onClick={createTeam} onClick = {(username,email,password,confirmPassword) => {
+          <Button
+            onSubmit={(username,email,password,confirmPassword) => {
+              // createTeam();
               Signup(username,email,password,confirmPassword);
             }}>
             Start Sandlot
           </Button>
         </form>
-      </Card>
+      {/* </Card> */}
     </div>
   )
 };
