@@ -66,6 +66,11 @@ export const Login = () => {
             </Button>
           </form>
       </Card>
+      <div>
+        <p className='jump_for_signup'>
+          <a href="/signup">Create an account</a> to use Sandlot for free!
+        </p>
+      </div>
     </div>
         //<button onClick = {auth.signOut()}>ログアウト</button>
   )

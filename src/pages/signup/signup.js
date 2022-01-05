@@ -54,7 +54,6 @@ export const SignUp = () => {
         const user = userCredential.user;
         const usersCollectionRef = collection(db, "Users");
         addDoc(usersCollectionRef, { name:username, id:user.uid});
-        
       })
       .catch((error) => {
         alert(error.code)
@@ -107,15 +106,6 @@ export const SignUp = () => {
               <input type="password" className='form-control' placeholder="Enter password (Confirm)" onChange={inputConfirmPassword}/>
           </div>
         </Card.Body>
-          {/* <form>
-            <Button type="button" className="btn btn-primary btn-block" 
-            onClick = {(username,email,password,confirmPassword) => {
-              Signup(username,email,password,confirmPassword);
-              // navigate("/createteam",{replace:true});
-            }}>
-              Register
-            </Button>
-          </form> */}
       </Card>
       <Card className='add_team_card'>
         <Card.Body>
@@ -171,13 +161,5 @@ export const SignUp = () => {
         </form>
       </Card>
     </div>
-    // ↑消さないで。
-    // <div>
-    //   <input className='form-control' placeholder="ユーザー名" onChange={inputUsername}/>
-    //   <input className='form-control' placeholder="メールアドレス" onChange={inputEmail}/>
-    //   <input className='form-control' placeholder="パスワード" onChange={inputPassword}/>
-    //   <input className='form-control' placeholder="パスワード（確認用）" onChange={inputConfirmPassword}/>
-    //   <button className = "button" onClick = {Signup(username,email,password,confirmPassword)}>ユーザー登録</button>
-    // </div>
   )
 };

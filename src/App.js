@@ -43,12 +43,12 @@ const App = () => {
       <div>
         <BrowserRouter>
           <Routes>
-            <Route path="/home" element={<GameInfo/>}/>
+            <Route path="/" element={<GameInfo/>}/>
+            <Route path="/gameinfo" element={<GameInfo/>}/>
             <Route path="/myteam" element={<MyTeam/>}/>
             <Route path="/creategame" element={<CreateGamePost/>}/>
             <Route path="/teamtable" element={<TeamInfo/>}/>
-            <Route path = "/createteam" element = {<AddTeam/>}/>
-            <Route path = "/signup" element ={<SignUp/>}/>
+            {/* <Route path = "/createteam" element = {<AddTeam/>}/> */}
             <Route path = "/login" element = {<Login/>}/>
             <Route path = "/logout" element = {<Logout/>}/>
             <Route path = "/signup" element = {<SignUp/>}/>
