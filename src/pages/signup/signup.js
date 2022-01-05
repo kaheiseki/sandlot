@@ -163,7 +163,7 @@ export const SignUp = () => {
         </Card.Body> */}
         <form>
           <Button
-            onSubmit={(username,email,password,confirmPassword) => {
+            onClick={(username,email,password,confirmPassword) => {
               // createTeam();
               Signup(username,email,password,confirmPassword);
             }}>
