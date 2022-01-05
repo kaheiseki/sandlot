@@ -23,6 +23,10 @@ export const Login = () => {
   const LogIn = (email,password) =>{
     signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
       const user = userCredential.user;
+      console.log("login成功")
+      setEmail("");
+      setPassword("");
+      //loginできたかわかるためにも、ページ遷移も実装したい
     })
     .catch((error) => {
       alert(error.code);
@@ -44,12 +48,12 @@ export const Login = () => {
           </Card.Title>
           <div className='form-group'>
             <label>Email address</label>
-            <input type="email" className='form-control' placeholder="Enter email" onChange={(e)=>inputEmail(e)}/>
+            <input type="email" className='form-control' placeholder="Enter email" value={email} onChange={(e)=>inputEmail(e)}/>
           </div>
 
           <div className='form-group'>
               <label>Password</label>
-              <input type="password" className='form-control' placeholder="Enter password" onChange={(e)=>inputPassword(e)}/>
+              <input type="password" className='form-control' placeholder="Enter password" value={password} onChange={(e)=>inputPassword(e)}/>
           </div>
 
           <div className='form-group'>
@@ -72,6 +76,5 @@ export const Login = () => {
         </p>
       </div>
     </div>
-        //<button onClick = {auth.signOut()}>ログアウト</button>
   )
 }
