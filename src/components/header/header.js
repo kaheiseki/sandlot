@@ -32,7 +32,8 @@ const Header = ({isLogin, username}) => {
               <Nav.Link href="/creategame" className="headerContents">Post game</Nav.Link>
               <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
               <Nav.Link href="/login" className="headerContents" onClick={()=>LogOut()}>Log out</Nav.Link>
-              {username}
+              <Nav.Link className="headerContents">{username}さん</Nav.Link>
+              {/* hoverした時クリッカブルに見える */}
             </Nav>
           </div>
         </Navbar.Collapse>

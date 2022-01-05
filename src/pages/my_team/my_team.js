@@ -26,10 +26,9 @@ export const MyTeam = () => {
         setCount(doc.data().count);
         setCaptain(doc.data().captain);
       });
-      
     }
   })
-  
+
   const upDate = ()=>{
 
   }
