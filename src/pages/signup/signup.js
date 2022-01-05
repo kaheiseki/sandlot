@@ -54,6 +54,10 @@ export const SignUp = () => {
         const user = userCredential.user;
         const usersCollectionRef = collection(db, "Users");
         addDoc(usersCollectionRef, { name:username, id:user.uid});
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
       })
       .catch((error) => {
         alert(error.code)
@@ -78,6 +82,10 @@ export const SignUp = () => {
 
   const createTeam = async () => {
     await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, userid:userId});
+    setNewTeamName("");
+    setNewCount("");
+    setNewPlace("");
+    setNewCaptain("");
   };
   return(
     <div className='form_outline'>
@@ -88,22 +96,22 @@ export const SignUp = () => {
           </Card.Title>
           <div className='form-group'>
             <label>User Name</label>
-            <input className='form-control' placeholder="Username" onChange={inputUsername}/>
+            <input className='form-control' placeholder="Username" value={username} onChange={inputUsername}/>
           </div>
 
           <div className='form-group'>
               <label>Email</label>
-              <input type="email" className='form-control' placeholder="Enter email" onChange={inputEmail}/>
+              <input type="email" className='form-control' placeholder="Enter email" value={email} onChange={inputEmail}/>
           </div>
 
           <div className='form-group'>
               <label>Password</label>
-              <input type="password" className='form-control' placeholder="Enter password" onChange={inputPassword}/>
+              <input type="password" className='form-control' placeholder="Enter password" value={password} onChange={inputPassword}/>
           </div>
 
           <div className='form-group'>
               <label>Password（Confirm）</label>
-              <input type="password" className='form-control' placeholder="Enter password (Confirm)" onChange={inputConfirmPassword}/>
+              <input type="password" className='form-control' placeholder="Enter password (Confirm)" value={confirmPassword} onChange={inputConfirmPassword}/>
           </div>
         </Card.Body>
       </Card>
@@ -115,6 +123,7 @@ export const SignUp = () => {
             <input
               className='form-control'
               placeholder="Team name..."
+              value={newTeamName}
               onChange={(event) => {
                 setNewTeamName(event.target.value);
               }}
@@ -125,6 +134,7 @@ export const SignUp = () => {
             <input
               className='form-control'
               placeholder="Home Place..."
+              value={newPlace}
               onChange={(event) => {
                 setNewPlace(event.target.value);
               }}
@@ -136,6 +146,7 @@ export const SignUp = () => {
               className='form-control'
               type="number"
               placeholder="Count..."
+              value={newCount}
               onChange={(event) => {
                 setNewCount(event.target.value);
               }}
@@ -146,6 +157,7 @@ export const SignUp = () => {
             <input
               className='form-control'
               placeholder="Representative"
+              value={newCaptain}
               onChange={(event) => {
                 setNewCaptain(event.target.value);
               }}
