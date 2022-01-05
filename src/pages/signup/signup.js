@@ -12,7 +12,8 @@ import {
 } from "firebase/firestore";
 import { Card , Button} from 'react-bootstrap';
 import './signup.css';
-
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export const SignUp = () => {
@@ -33,6 +34,7 @@ export const SignUp = () => {
   const inputConfirmPassword = useCallback((e) => {
     setConfirmPassword(e.target.value)
   },[setConfirmPassword]);
+  const navigate = useNavigate();
 
 
   const Signup = (username,email,password,confirmPassword) => {
@@ -46,11 +48,11 @@ export const SignUp = () => {
         alert("パスワードが一致しません")
         return false
       }
-
       return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
         const user = userCredential.user;
         const usersCollectionRef = collection(db, "Users");
         addDoc(usersCollectionRef, { name:username, id:user.uid});
+        
       })
       .catch((error) => {
         alert(error.code)
@@ -85,7 +87,11 @@ export const SignUp = () => {
           </div>
         </Card.Body>
           <form>
-            <Button type="button" className="btn btn-primary btn-block" onClick={Signup(username,email,password,confirmPassword)}>
+            <Button type="button" className="btn btn-primary btn-block" 
+            onClick = {(username,email,password,confirmPassword) => {
+              Signup(username,email,password,confirmPassword);
+              // navigate("/createteam",{replace:true});
+            }}>
               Register
             </Button>
           </form>
