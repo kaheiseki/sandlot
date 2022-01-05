@@ -23,20 +23,22 @@ export const CreateGamePost = () => {
   // 本来date型でデータを収集したいが、一旦ただの数値で格納
   const [newGameTime, setNewGameTime] = useState(0);
   const [newPlace, setNewPlace] = useState("");
-  const [newStation, setNewStation] = useState("");
   const [newCost, setNewCost] = useState(0);
   const [newHelper, setNewHelper] = useState(0);
 
   const gamesCollectionRef = collection(db, "Games");
 
   const createGame = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, date: newGameDate, time: newGameTime, place: newPlace, station: newStation, count: Number(newCount), cost: newCost, helper: newHelper });
+    await addDoc(gamesCollectionRef, { name: newTeamName, date: newGameDate, time: newGameTime, place: newPlace, count: Number(newCount), cost: newCost, helper: newHelper });
     // フォーム送信後中身を空にする処理（まだうまくいってない）
-    setNewCount(0);
+    //数字型の中身をからにできてない
+    setNewCount("");
     setNewTeamName("");
     setNewPlace("");
-    setNewHelper(0);
-    //変数変えてるだけ
+    // setNewHelper(null);
+    // setNewGameDate(null);
+    // setNewGameTime(null);
+    // setNewCost(null);
   };
 
 
@@ -55,6 +57,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewGameDate(event.target.value);
             }}
+            value={newGameDate}
           />
           {/* カレンダーから選ぶやつ実装したい */}
           <input
@@ -64,6 +67,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewGameTime(event.target.value);
             }}
+            value={newGameTime}
           />
           <input
             className='form-control'
@@ -71,6 +75,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewTeamName(event.target.value);
             }}
+            value={newTeamName}
           />
           <input
             className='form-control'
@@ -78,13 +83,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewPlace(event.target.value);
             }}
-          />
-          <input
-            className='form-control'
-            placeholder="Station"
-            onChange={(event) => {
-              setNewStation(event.target.value);
-            }}
+            value={newPlace}
           />
           <input
             className='form-control'
@@ -93,6 +92,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewCount(event.target.value);
             }}
+            value={newCount}
           />
           <input
             className='form-control'
@@ -101,6 +101,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewCost(event.target.value);
             }}
+            value={newCost}
           />
           <input
             className='form-control'
@@ -108,6 +109,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewHelper(event.target.value);
             }}
+            value={newHelper}
           />
         </Card.Body>
         <form>
