@@ -40,29 +40,29 @@ export const MyTeam = () => {
           <Card.Title className='create_game_post_title'>My team</Card.Title>
           <input
             className='form-control'
-            value={teamname}
+            defaultValue={teamname}
             onChange={(event) => {
               setTeamname(event.target.value);
             }}
           />
           <input
             className='form-control'
-            value = {place}
-            onChange={(event) => {
-              setPlace(event.target.value);
+            defaultValue = {place}
+            onChange={(e) => {
+              setPlace(e.target.value);
             }}
           />
           <input
             className='form-control'
             type="number"
-            value = {count}
+            defaultValue = {count}
             onChange={(event) => {
               setCount(event.target.value);
             }}
           />
           <input
             className='form-control'
-            value={captain}
+            defaultValue={captain}
             onChange={(event) => {
               setCaptain(event.target.value);
             }}
