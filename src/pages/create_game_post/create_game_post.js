@@ -12,6 +12,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
 import './create_game_post.css';
+import { useNavigate, useNavigationType } from 'react-router-dom';
 
 
 
@@ -41,6 +42,7 @@ export const CreateGamePost = () => {
     // setNewCost(null);
   };
 
+  const navigate = useNavigate();
 
 
   return (
@@ -113,7 +115,8 @@ export const CreateGamePost = () => {
           />
         </Card.Body>
         <form>
-          <Button className='create_game_button' onClick={()=>createGame()} autoFocus>
+          <Button className='create_game_button' onClick={()=>{createGame();
+          navigate("/",{replace:true})}} autoFocus>
             {/* autoFocusしたい */}
               Create Game
           </Button>
