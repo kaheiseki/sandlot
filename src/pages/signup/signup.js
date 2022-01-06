@@ -65,9 +65,9 @@ export const SignUp = () => {
  
     return(
       <div className='form_outline'>
-        <Card className='form_groups'>
+        <Card className='card_outline'>
           <Card.Body>
-            <Card.Title className='signup_title'>
+            <Card.Title className='form_title'>
               Sign Up
             </Card.Title>
             <div className='form-group'>
@@ -110,6 +110,8 @@ export const SignUp = () => {
       </Card>
         <form>
           <Button
+            type='button'
+            className='btn btn-primary btn-block'
             onClick={Signup(username,email,password,confirmPassword)
             }>
             Start Sandlot

@@ -1,45 +1,45 @@
-/* * :not(header){
-  color: #ffffff;
-}
 .form_outline{
-  margin-top: 20px;
+  margin-top: 20px !important;
   text-align: center;
   border-radius: 10px;
-  width: 400px;
   margin: 0 auto;
-  color: #ffffff !important;
+  color: #000000;
+  width: 400px !important;
+  /* card(gameinfo) が妨害してるので*/
 }
 
-.card_outline{
-  background-color: #ffffff !important;
-}
-.login_title{
+.form_title{
   font-size: 35px;
   text-align: center;
   color: #000000 !important;
 }
+
 label{
   font-size: 20px;
   margin-bottom: 5px;
   color: #000000;
 }
+
 .form-group{
   margin: 0px 20px 15px 20px;
   text-align: left;
 }
+
 #customCheck1{
   margin-right: 5px;
 }
+
 Button{
   background-color: #45be35 !important;
   width: 180px !important;
   border-radius: 20px!important;
 }
+
 Button:hover{
   color: #000000 !important;
   background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
 }
 
 .jump_for_signup{
-  margin-top: 20px;
-} */
+  margin-top: 100px;
+}

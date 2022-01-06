@@ -39,7 +39,7 @@ export const Login = () => {
     <div className='form_outline'>
       <Card className='card_outline'>
         <Card.Body>
-          <Card.Title className='login_title'>
+          <Card.Title className='form_title'>
             Login
           </Card.Title>
           <div className='form-group'>
@@ -59,7 +59,6 @@ export const Login = () => {
               {/* Remember meの実装はまだ */}
             </div>
           </div>
-        </Card.Body>
           <form>
             <Button type="button" className="btn btn-primary btn-block" onClick={()=>{LogIn(email,password);
             navigate("/",{replace:true})
@@ -67,6 +66,7 @@ export const Login = () => {
               Submit
             </Button>
           </form>
+        </Card.Body>
       </Card>
       <div>
         <p className='jump_for_signup'>
