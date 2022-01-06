@@ -166,10 +166,10 @@ export const SignUp = () => {
         </Card.Body> */}
         <form>
           <Button
-            onClick={(username,email,password,confirmPassword) => {
+            onClick={
               // createTeam();
-              Signup(username,email,password,confirmPassword);
-            }}>
+              Signup(username,email,password,confirmPassword)
+            }>
             Start Sandlot
           </Button>
         </form>
