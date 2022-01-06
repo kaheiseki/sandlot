@@ -19,7 +19,7 @@ export const AddTeam = () => {
   const [newCount, setNewCount] = useState(0);
   const [newPlace, setNewPlace] = useState("");
   const [newCaptain, setNewCaptain] = useState("");
-  const [userId,setUserId] = useState("aa");
+  const [userId,setUserId] = useState(" ");
   const navigate = useNavigate();
 
   onAuthStateChanged(auth,(user)=>{

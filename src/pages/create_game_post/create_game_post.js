@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState} from "react";
-import { db } from "../../firebase";
+import { db,auth } from "../../firebase";
 import {
   collection,
   addDoc,
+  doc,
+  getDoc
 } from "firebase/firestore";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
 import './create_game_post.css';
 import { useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
 
 
 
@@ -22,8 +25,22 @@ export const CreateGamePost = () => {
   const [newPlace, setNewPlace] = useState("");
   const [newCost, setNewCost] = useState("");
   const [newHelper, setNewHelper] = useState("");
+  const [userId,setUserId] = useState(" ");
 
   const gamesCollectionRef = collection(db, "Games");
+
+  onAuthStateChanged(auth,async(user)=>{
+    if(user){
+      const uid = user.uid;
+      setUserId(uid);
+      const teamsDocumentRef = doc(db,"Teams",userId);
+      const docSnap = await getDoc(teamsDocumentRef);
+      if(docSnap){
+        setNewTeamName(docSnap.data().name);
+        console.log(docSnap.data())
+      }
+    }
+  })
 
   const createGame = async () => {
     await addDoc(gamesCollectionRef, { name: newTeamName, date: newGameDate, time: newGameTime, place: newPlace, count: Number(newCount), cost: newCost, helper: newHelper });
@@ -65,15 +82,7 @@ export const CreateGamePost = () => {
             onChange={(event) => {
               setNewGameTime(event.target.value);
             }}
-            value={newGameTime}
-          />
-          <input
-            className='form-control'
-            placeholder="Team name"
-            onChange={(event) => {
-              setNewTeamName(event.target.value);
-            }}
-            value={newTeamName}
+            defaultValue={newGameTime}
           />
           <input
             className='form-control'
