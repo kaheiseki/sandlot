@@ -38,6 +38,7 @@ export const CreateGamePost = () => {
       if(docSnap){
         setNewTeamName(docSnap.data().name);
         console.log(docSnap.data())
+        // エラー出てる
       }
     }
   })
