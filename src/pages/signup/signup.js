@@ -33,33 +33,34 @@ export const SignUp = () => {
   const navigate = useNavigate();
 
 
-  // const Signup = (username,email,password,confirmPassword) => {
-  //   return async() => {
-  //     if (username === "" || email === "" || password === "" || confirmPassword === ""){
-  //       alert("必須項目が未入力です");
-  //       return false
-  //     }
+  const Signup = (username,email,password,confirmPassword) => {
+    console.log("signup")
+    return async() => {
+      if (username === "" || email === "" || password === "" || confirmPassword === ""){
+        alert("必須項目が未入力です");
+        return false
+      }
 
-  //     if (password !== confirmPassword){
-  //       alert("パスワードが一致しません")
-  //       return false
-  //     }else{
-  //       return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
-  //         const user = userCredential.user;
-  //         const usersCollectionRef = collection(db, "Users");
-  //         addDoc(usersCollectionRef, { name:username, id:user.uid});
-  //         setUsername("");
-  //         setEmail("");
-  //         setPassword("");
-  //         setConfirmPassword("");
-  //         console.log("signup succeed");
-  //       })
-  //       .catch((error) => {
-  //         alert(error.code)
-  //       })
-  //     }
-  //   }
-  // }
+      else if (password !== confirmPassword){
+        alert("パスワードが一致しません")
+        return false
+      }else{
+        return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
+          const user = userCredential.user;
+          const usersCollectionRef = collection(db, "Users");
+          addDoc(usersCollectionRef, { name:username, id:user.uid});
+          setUsername("");
+          setEmail("");
+          setPassword("");
+          setConfirmPassword("");
+          console.log("signup succeed");
+        })
+        .catch((error) => {
+          alert(error.code)
+        })
+      }
+    }
+  }
 
   //add_teamのhooks
   // const [newTeamName, setNewTeamName] = useState("");
@@ -164,12 +165,10 @@ export const SignUp = () => {
         </Card.Body> */}
         <form>
           <Button
-            onClick={() => {console.log("onclick")}}
-            >
-            {/* onClick={(username,email,password,confirmPassword) => {
-              createTeam();
+            onClick={(username,email,password,confirmPassword) => {
+              // createTeam();
               Signup(username,email,password,confirmPassword);
-            }}> */}
+            }}>
             Start Sandlot
           </Button>
         </form>
