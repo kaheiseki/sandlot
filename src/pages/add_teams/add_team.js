@@ -4,6 +4,7 @@ import { db } from "../../firebase";
 import {
   collection,
   getDocs,
+  setDoc,
   addDoc,
   updateDoc,
   deleteDoc,
@@ -25,8 +26,8 @@ export const AddTeam = () => {
   const [newCaptain, setNewCaptain] = useState("");
   const [userId,setUserId] = useState("");
   const navigate = useNavigate();
-
-  const gamesCollectionRef = collection(db, "Teams");
+  
+  
   onAuthStateChanged(auth,(user)=>{
     if(user){
       const uid = user.uid;
@@ -34,9 +35,10 @@ export const AddTeam = () => {
     }
   })
 
-
+  
+  const teamsDocumentRef = doc(db, "Teams",userId);
   const createTeam = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, userid:userId});
+    await setDoc(teamsDocumentRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, userid:userId});
   };
 
 console.log(userId);

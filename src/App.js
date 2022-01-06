@@ -48,7 +48,7 @@ const App = () => {
             <Route path="/" element={<GameInfo/>}/>
             <Route path="/gameinfo" element={<GameInfo/>}/>
             <Route path="/myteam" element={<MyTeam/>}/>
-            <Route path="/creategame" uid = {uid} element={<CreateGamePost/>}/>
+            <Route path="/creategame" element={<CreateGamePost/>}/>
             <Route path="/teamtable" element={<TeamInfo/>}/>
             <Route path = "/createteam" element = {<AddTeam/>}/>
             <Route path = "/login" element = {<Login/>}/>
