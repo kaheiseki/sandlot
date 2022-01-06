@@ -57,7 +57,6 @@ export const SignUp = () => {
           setEmail("");
           setPassword("");
           setConfirmPassword("");
-          console.log("signup succeed");
         })
         .catch((error) => {
           alert(error.code);
@@ -169,9 +168,11 @@ export const SignUp = () => {
         </Card.Body> */}
         <form>
           <Button
-            onClick={
+            onClick={() => 
               // createTeam();
-              Signup(username,email,password,confirmPassword)
+              {Signup(username,email,password,confirmPassword);
+              navigate("/createteam",{replace:true});
+              }
             }>
             Start Sandlot
           </Button>

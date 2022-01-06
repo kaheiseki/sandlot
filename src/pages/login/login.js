@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword,signOut} from "firebase/auth";
 import './login.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Card,Button} from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -34,10 +35,7 @@ export const Login = () => {
     });
   };
 
-  const LogOut = () => {
-    console.log("logout");
-    auth.signOut();
-  }
+  const navigate = useNavigate();
 
   return (
     <div className='form_outline'>
@@ -65,7 +63,9 @@ export const Login = () => {
           </div>
         </Card.Body>
           <form>
-            <Button type="button" className="btn btn-primary btn-block" onClick={()=>LogIn(email,password)}>
+            <Button type="button" className="btn btn-primary btn-block" onClick={()=>{LogIn(email,password);
+            navigate("/",{replace:true})
+            }}>
               Submit
             </Button>
           </form>
