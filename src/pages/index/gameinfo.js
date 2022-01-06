@@ -51,7 +51,7 @@ const GameInfo = () => {
                     <Card.Text>日時: {String(game.date).slice(4,6)}月{String(game.date)[6,8]}日</Card.Text>
                     {/* この日付機能うまくできてない */}
                   </Card.Body>
-                  <Button variant="primary" style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>
+                  <Button onClick={()=>handleShow(index)}>詳細を見る</Button>
                 </Card>
               </div>
               {/* modalについての記述 */}
@@ -67,7 +67,7 @@ const GameInfo = () => {
                     <p>費用:{games[indexContent].cost}円</p>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={()=>handleClose()}>Close</Button>
+                    <Button onClick={()=>handleClose()}>Close</Button>
                   </Modal.Footer>
                 </Modal>
               </div>

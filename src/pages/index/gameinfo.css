@@ -2,7 +2,7 @@
 .gameInfoTitle{
   text-align: center;
   font-size: 40px;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 
@@ -44,9 +44,10 @@ div.container{
 
 .card{
   width: 18rem;
-  height: 12rem;
-  border-radius: 10px;
+  height: 14rem;
+  border-radius: 20px;
   background-color: #ffffff !important;
+  border: none;
 }
 
 .card-body{
@@ -63,4 +64,9 @@ div.container{
 .btn{
   color: black;
   background-color: #88b940 !important;
+  border:none !important;
+  margin: 0 auto;
+  width: 180px;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
