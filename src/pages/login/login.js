@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useState } from "react";
 import { auth } from "../../firebase";
-import { signInWithEmailAndPassword,signOut} from "firebase/auth";
+import { signInWithEmailAndPassword} from "firebase/auth";
 import './login.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Card,Button} from 'react-bootstrap';
@@ -23,8 +23,6 @@ export const Login = () => {
 
   const LogIn = (email,password) =>{
     signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
-      const user = userCredential.user;
-      console.log("login成功")
       setEmail("");
       setPassword("");
       //loginできたかわかるためにも、ページ遷移も実装したい

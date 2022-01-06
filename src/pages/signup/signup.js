@@ -37,7 +37,6 @@ export const SignUp = () => {
     return async() => {
       if (username === "" || email === "" || password === "" || confirmPassword === ""){
         alert("必須項目が未入力です");
-        console.log("必須項目が未入力です");
         return false
       }
 

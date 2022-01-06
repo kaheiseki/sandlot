@@ -34,7 +34,6 @@ export const AddTeam = () => {
       
     }
   })
-  console.log(userId);
 
   const teamsDocumentRef = doc(db, "Teams", userId);
   const createTeam = async () => {

@@ -27,7 +27,6 @@ export const MyTeam = () => {
     }
   });
 
-  console.log(uid);
   const teamsDocumentRef = doc(db, "Teams", uid);
   const upDate = async () => {
     await updateDoc(teamsDocumentRef, { 

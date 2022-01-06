@@ -37,7 +37,6 @@ const App = () => {
       setIsLogin(false);
     }
   })
-  console.log(uid);
   return(
     <div>
       <Header isLogin={isLogin} username={username}/>
