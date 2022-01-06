@@ -1,7 +1,10 @@
 *{
   font-family: 'Arial Rounded MT Bold',sans-serif;
 }
-*:not(.header_outline>*){
+/* *:not(.header_outline>*){
+  background-color: hsl(84, 47%, 89%) !important;
+} */
+body{
   background-color: hsl(84, 47%, 89%) !important;
 }
 
