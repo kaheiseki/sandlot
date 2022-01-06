@@ -164,7 +164,7 @@ export const SignUp = () => {
         </Card.Body> */}
         <form>
           <Button
-            onClick={console.log("onclic")}
+            onClick={() => {console.log("onclick")}}
             >
             {/* onClick={(username,email,password,confirmPassword) => {
               createTeam();
