@@ -32,9 +32,6 @@ export const SignUp = () => {
   },[setConfirmPassword]);
   const navigate = useNavigate();
 
-  console.log("inputUsername = " + inputUsername);
-  console.log("username = " + username);
-
 
   const Signup = (username,email,password,confirmPassword) => {
     console.log("signup")
