@@ -1,40 +1,28 @@
-/* .form_outline{
-  margin-top: 20px;
-  text-align: center;
-  border-radius: 10px;
-  width: 400px;
-  margin: 0 auto;
-  border: none !important;
-  outline: none !important;
-} */
-/* .form_groups{
+.form_groups{
   border: none !important;
 }
 
-.signup_title{
-  font-size: 35px !important;
-  text-align: center;
+.signup_card_outline{
+  width: 500px !important;
+  height: 500px !important;
+  /* card(gameinfo) が妨害してるので*/
 }
 
-label{
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-.form-group{
-  margin: 0px 20px 15px 20px;
-  text-align: left;
-}
-.form-control{
-}
 .add_team_card{
   border: none !important;
 }
-Button{
+.form_button{
+  margin-top: 20px !important;
   background-color: #45be35 !important;
   width: 180px !important;
   border-radius: 20px!important;
 }
-Button:hover{
+/* .form_button:hover{
   color: #000000 !important;
   background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
 } */
+
+.jump_for_login{
+  margin-top: 10px;
+  text-align: center;
+}

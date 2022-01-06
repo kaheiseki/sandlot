@@ -7,7 +7,7 @@
   width: 500px;
 }
 
-.card_outline{
+.login_card_outline{
   width: 500px !important;
   height: 380px !important;
   /* card(gameinfo) が妨害してるので*/
@@ -45,7 +45,7 @@ label{
 }
 
 .form_button:hover{
-  color: #000000 !important;
+  color: #ffffff !important;
   background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
 }
 

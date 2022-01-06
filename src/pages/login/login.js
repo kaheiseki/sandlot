@@ -37,7 +37,7 @@ export const Login = () => {
 
   return (
     <div className='form_outline'>
-      <Card className='card_outline'>
+      <Card className='login_card_outline'>
         <Card.Body>
           <Card.Title className='form_title'>
             Login

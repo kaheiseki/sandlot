@@ -65,7 +65,7 @@ export const SignUp = () => {
  
     return(
       <div className='form_outline'>
-        <Card className='card_outline'>
+        <Card className='signup_card_outline'>
           <Card.Body>
             <Card.Title className='form_title'>
               Sign Up
@@ -106,18 +106,22 @@ export const SignUp = () => {
               <label>Password（Confirm）</label>
               <input type="password" className='form-control' placeholder="Enter password (Confirm)" value={confirmPassword} onChange={inputConfirmPassword}/>
           </div>
+          <form>
+            <Button
+              type='button'
+              className='form_button'
+              onClick={Signup(username,email,password,confirmPassword)
+              }>
+              Start Sandlot
+            </Button>
+          </form>
         </Card.Body>
       </Card>
-        <form>
-          <Button
-            type='button'
-            className='form_button'
-            onClick={Signup(username,email,password,confirmPassword)
-            }>
-            Start Sandlot
-          </Button>
-        </form>
-      {/* </Card> */}
+      <div>
+        <p className='jump_for_login'>
+          Already have an account? <a href="/login">Log in</a>
+        </p>
+      </div>
     </div>
     )
 };
