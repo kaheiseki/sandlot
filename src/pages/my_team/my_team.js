@@ -2,15 +2,13 @@ import React from 'react'
 import { auth } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import { db } from '../../firebase'
-import { collection,getDocs,query,where } from 'firebase/firestore'
-import { useEffect } from 'react'
+import { collection,getDocs,query,where,doc,updateDoc} from 'firebase/firestore'
 import { useState } from 'react'
 import {Card,Button} from 'react-bootstrap';
-import { unstable_batchedUpdates } from 'react-dom'
 
 export const MyTeam = () => {
 
-  const [uid,setUid] = useState("");
+  const [uid,setUid] = useState(" ");
   const [teamname,setTeamname] = useState("");
   const [place,setPlace] = useState("");
   const [count,setCount] = useState(0);
@@ -27,11 +25,17 @@ export const MyTeam = () => {
         setCaptain(doc.data().captain);
       });
     }
-  })
+  });
 
-  const upDate = ()=>{
-
-  }
+  const teamsDocumentRef = doc(db, "Teams", uid);
+  const upDate = async () => {
+    await updateDoc(teamsDocumentRef, { 
+      name: teamname, 
+      place: place, 
+      count: Number(count), 
+      captain: captain
+    });
+  };
 
   return (
     <div>

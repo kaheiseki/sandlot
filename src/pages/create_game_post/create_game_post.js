@@ -1,18 +1,14 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { db } from "../../firebase";
 import {
   collection,
-  getDocs,
   addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
 import './create_game_post.css';
-import { useNavigate, useNavigationType } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 

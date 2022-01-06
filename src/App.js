@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from "./components/header/header"
@@ -13,7 +12,6 @@ import { AddTeam } from "./pages/add_teams/add_team";
 import { SignUp } from "./pages/signup/signup";
 import { Login } from "./pages/login/login";
 import { Logout } from "./pages/logout/logout";
-import TestSignUp from "./test/test";
 import { auth, db } from './firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import { collection,getDocs,query,where } from 'firebase/firestore'
@@ -21,13 +19,17 @@ import { collection,getDocs,query,where } from 'firebase/firestore'
 const App = () => {
   const [username,setUsername] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-  const [uid,setUid] = useState("");
+
+  // 現時点では必要ないが今後必要になることに備えて用意
+  const [email,setEmail] = useState("");
+  const [uid,setUid] = useState(" ");
   onAuthStateChanged(auth,async (user) => {
     if(user){
       setIsLogin(true);
       const uid = user.uid;
       setUid(uid);
       const email = user.email;
+      setEmail(email);
       const q = query(collection(db, "Users"),where("id","==",uid));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc)=>{
@@ -37,7 +39,6 @@ const App = () => {
       setIsLogin(false);
     }
   })
-  console.log(uid);
   return(
     <div>
       <Header isLogin={isLogin} username={username}/>

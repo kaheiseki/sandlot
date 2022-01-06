@@ -1,13 +1,8 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { db } from "../../firebase";
 import {
-  collection,
-  getDocs,
   setDoc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
   doc,
 } from "firebase/firestore";
 import { auth } from '../../firebase';
@@ -34,7 +29,6 @@ export const AddTeam = () => {
       
     }
   })
-  console.log(userId);
 
   const teamsDocumentRef = doc(db, "Teams", userId);
   const createTeam = async () => {
