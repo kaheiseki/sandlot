@@ -22,10 +22,15 @@ export const Login = () => {
   },[setPassword]);
 
   const LogIn = (email,password) =>{
+    if (email === "" || password === ""){
+      alert("入力が不正です");
+      return false
+    }
     signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
       setEmail("");
       setPassword("");
       //loginできたかわかるためにも、ページ遷移も実装したい
+      navigate("/",{replace:true})
     })
     .catch((error) => {
       alert(error.code);
@@ -60,9 +65,7 @@ export const Login = () => {
             </div>
           </div>
           <form>
-            <Button type="button" className="form_button" onClick={()=>{LogIn(email,password);
-            navigate("/",{replace:true})
-            }}>
+            <Button type="button" className="form_button" onClick={() => {LogIn(email,password)}}>
               Submit
             </Button>
           </form>
