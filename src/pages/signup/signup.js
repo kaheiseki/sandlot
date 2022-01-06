@@ -32,12 +32,16 @@ export const SignUp = () => {
   },[setConfirmPassword]);
   const navigate = useNavigate();
 
+  console.log("inputUsername = " + inputUsername);
+  console.log("username = " + username);
+
 
   const Signup = (username,email,password,confirmPassword) => {
     console.log("signup")
     return async() => {
       if (username === "" || email === "" || password === "" || confirmPassword === ""){
         alert("必須項目が未入力です");
+        console.log("必須項目が未入力です");
         return false
       }
 
@@ -56,7 +60,7 @@ export const SignUp = () => {
           console.log("signup succeed");
         })
         .catch((error) => {
-          alert(error.code)
+          alert(error.code);
         })
       }
     }
