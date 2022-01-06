@@ -11,6 +11,7 @@ const Header = ({isLogin, username}) => {
   const LogOut = () => {
     auth.signOut();
   }
+  console.log(isLogin);
   if(isLogin){
     return(
       <Navbar collapseOnSelect expand="lg" className="header_outline">
