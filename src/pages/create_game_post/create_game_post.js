@@ -15,13 +15,13 @@ import { useNavigate } from 'react-router-dom';
 
 export const CreateGamePost = () => {
   const [newTeamName, setNewTeamName] = useState("");
-  const [newCount, setNewCount] = useState(0);
-  const [newGameDate, setNewGameDate] = useState(0);
+  const [newCount, setNewCount] = useState("");
+  const [newGameDate, setNewGameDate] = useState("");
   // 本来date型でデータを収集したいが、一旦ただの数値で格納
-  const [newGameTime, setNewGameTime] = useState(0);
+  const [newGameTime, setNewGameTime] = useState("");
   const [newPlace, setNewPlace] = useState("");
-  const [newCost, setNewCost] = useState(0);
-  const [newHelper, setNewHelper] = useState(0);
+  const [newCost, setNewCost] = useState("");
+  const [newHelper, setNewHelper] = useState("");
 
   const gamesCollectionRef = collection(db, "Games");
 
