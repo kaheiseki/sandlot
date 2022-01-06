@@ -8,13 +8,11 @@ import { collection,getDocs,query,where } from 'firebase/firestore'
 import { useState } from 'react'
 import { Logout } from "../../pages/logout/logout";
 
-// import { Link } from "react-router-dom";
 
 
 // ヘッダーを表示するコンポーネント
 const Header = ({isLogin, username}) => {
   const LogOut = () => {
-    console.log("logout");
     auth.signOut();
   }
   if(isLogin){

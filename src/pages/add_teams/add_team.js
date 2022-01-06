@@ -24,24 +24,23 @@ export const AddTeam = () => {
   const [newCount, setNewCount] = useState(0);
   const [newPlace, setNewPlace] = useState("");
   const [newCaptain, setNewCaptain] = useState("");
-  const [userId,setUserId] = useState("");
+  const [userId,setUserId] = useState("aa");
   const navigate = useNavigate();
-  
-  
+
   onAuthStateChanged(auth,(user)=>{
     if(user){
       const uid = user.uid;
       setUserId(uid);
+      
     }
   })
+  console.log(userId);
 
-  
-  const teamsDocumentRef = doc(db, "Teams",userId);
+  const teamsDocumentRef = doc(db, "Teams", userId);
   const createTeam = async () => {
     await setDoc(teamsDocumentRef, { name: newTeamName, place: newPlace, count: Number(newCount), captain: newCaptain, userid:userId});
+    navigate("/",{replace:true})
   };
-
-console.log(userId);
   return(
     <div>
       <Card className='add_team_card'>

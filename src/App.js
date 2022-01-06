@@ -23,7 +23,6 @@ const App = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [uid,setUid] = useState("");
   onAuthStateChanged(auth,async (user) => {
-    console.log("before")
     if(user){
       setIsLogin(true);
       const uid = user.uid;
@@ -33,12 +32,12 @@ const App = () => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc)=>{
         setUsername(doc.data().name);
-        console.log(username);
       });
     }else{
       setIsLogin(false);
     }
   })
+  console.log(uid);
   return(
     <div>
       <Header isLogin={isLogin} username={username}/>
@@ -48,7 +47,7 @@ const App = () => {
             <Route path="/" element={<GameInfo/>}/>
             <Route path="/gameinfo" element={<GameInfo/>}/>
             <Route path="/myteam" element={<MyTeam/>}/>
-            <Route path="/creategame" element={<CreateGamePost/>}/>
+            <Route path="/creategame"  element={<CreateGamePost />}/>
             <Route path="/teamtable" element={<TeamInfo/>}/>
             <Route path = "/createteam" element = {<AddTeam/>}/>
             <Route path = "/login" element = {<Login/>}/>
