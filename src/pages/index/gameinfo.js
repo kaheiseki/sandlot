@@ -36,14 +36,14 @@ const GameInfo = () => {
   return(
     <div>
       <div className="gameInfoTitle">
-        試合一覧
+        Game Info
       </div>
       <div className="container">
         {games.map((game, index) => {
           return (
             <div>
               <div className="infolist" key={index}>
-                <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
+                <Card>
                   <Card.Body>
                     <Card.Title>{game.name}</Card.Title>
                     <Card.Text>チーム人数: {game.count}</Card.Text>

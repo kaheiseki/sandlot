@@ -1,8 +1,9 @@
-/* .gameInfoTitle{
+
+.gameInfoTitle{
   text-align: center;
   font-size: 40px;
   margin-top: 5px;
-} */
+}
 
 
 /* div.mb-2{
@@ -22,7 +23,7 @@
   width:400px;
 } */
 
-/* .gameinfo{
+.gameinfo{
   width:300px;
   height:200px;
   margin: 20px;
@@ -33,4 +34,33 @@ div.container{
   display:flex;
   flex-wrap:wrap;
   justify-content: center;
-} */
+}
+.infolist{
+  margin:50px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.card{
+  width: 18rem;
+  height: 12rem;
+  border-radius: 10px;
+  background-color: #ffffff !important;
+}
+
+.card-body{
+  background-color: white !important;
+}
+
+.card-title{
+  background-color: white !important;
+}
+.card-text{
+  background-color: white !important;
+}
+
+.btn{
+  color: black;
+  background-color: #88b940 !important;
+}

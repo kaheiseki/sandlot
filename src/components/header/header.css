@@ -1,5 +1,9 @@
-/* *{
-  font-family: 'Arial Rounded MT Bold',sans-serif;}
+*{
+  font-family: 'Arial Rounded MT Bold',sans-serif;
+}
+*:not(.header_outline){
+  background-color: rgba(136,185,64, 0.1) !important;
+}
 .header_outline{
   background-color: black !important;
 }
@@ -7,55 +11,50 @@
 .header_outline{
   height: 100px;
 }
-.headerText{
-  font-size: 40px;
-  font-weight: bold;
-  margin-left: 15%;
-  color: #45be35 !important;
-
-}
-
-.headerText:hover{
-  color: #88b940 !important;
-  background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.header_contents_outline{
-  margin-right: 15%;
-  margin-left: auto;
-}
-.mr-auto{
-  background-color: black !important;
-}
-.headerContents{
-  background-color: black !important;
-  font-size: 20px;
-  justify-content: flex-end;
-  float: right !important;
-  border-radius: 10px;
-  outline: #3e3e3e;
-  margin-left: 5px;
-  border: 10px;
-  font-weight: bold;
-  color: #ffffff !important;
-}
-.headerContents:hover{
-  background-color: #45be35 !important;
-  color: black !important;
-}
-
-@media (max-width:1400px) {
+  /* Sandlot */
   .headerText{
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 15%;
+    color: #45be35 !important;
   }
-  .headerContents{
-    font-size: 16px;
+  .headerText:hover{
+    color: #45be35 !important;
+    background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-}
 
-@media (max-width:1200px) {
-  .headerContents{
-    font-size: 15px;
-  }
-} */
+    .header_contents_outline{
+      margin-right: 15%;
+      margin-left: auto;
+    }
+      /* Game Table, Team Table, etc... */
+      .headerContents{
+        font-size: 20px;
+        border-radius: 10px;
+        margin-left: 5px;
+        font-weight: bold;
+        background-color: #000000 !important;
+        color: #ffffff !important;
+
+      }
+      .headerContents:hover{
+        background-color: #45be35 !important;
+        color: black !important;
+      }
+
+      @media (max-width:1400px) {
+        .headerText{
+          font-size: 30px;
+        }
+        .headerContents{
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width:1200px) {
+        .headerContents{
+          font-size: 15px;
+        }
+      }
