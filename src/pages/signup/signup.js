@@ -121,24 +121,24 @@ export const SignUp = () => {
             </div>
 
             <div className='form-group'>
-                <label>Email</label>
-                <input
+              <label>Email</label>
+              <input
                 type="email"
                 className='form-control'
                 placeholder="Enter email"
                 value={email}
                 onChange={inputEmail}
-                />
+              />
             </div>
 
             <div className='form-group'>
                 <label>Password</label>
                 <input
-                type="password"
-                className='form-control'
-                placeholder="Enter password"
-                value={password}
-                onChange={inputPassword}
+                  type="password"
+                  className='form-control'
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={inputPassword}
                 />
             </div>
 
