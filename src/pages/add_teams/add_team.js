@@ -39,7 +39,7 @@ export const AddTeam = () => {
     <div>
       <Card className='add_team_card'>
         <Card.Body>
-          <Card.Title className='create_game_post_title'>Add team</Card.Title>
+          <Card.Title className='create_game_post_title'>Team Info</Card.Title>
           <input
             className='form-control'
             placeholder="Team name..."
