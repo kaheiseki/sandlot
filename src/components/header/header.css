@@ -2,7 +2,7 @@
   font-family: 'Arial Rounded MT Bold',sans-serif;
 }
 *:not(.header_outline){
-  background-color: rgba(136,185,64, 0.1) !important;
+  background-color: #E5F0D5 !important;
 }
 .header_outline{
   background-color: black !important;
