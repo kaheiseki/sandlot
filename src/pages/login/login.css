@@ -1,23 +1,27 @@
-*{
+/* * :not(header){
   color: #ffffff;
 }
 .form_outline{
   margin-top: 20px;
   text-align: center;
   border-radius: 10px;
-  /* outline: 0.1rem solid #b9b9b9; */
   width: 400px;
   margin: 0 auto;
   color: #ffffff !important;
 }
 
+.card_outline{
+  background-color: #ffffff !important;
+}
 .login_title{
   font-size: 35px;
   text-align: center;
+  color: #000000 !important;
 }
 label{
   font-size: 20px;
   margin-bottom: 5px;
+  color: #000000;
 }
 .form-group{
   margin: 0px 20px 15px 20px;
@@ -38,4 +42,4 @@ Button:hover{
 
 .jump_for_signup{
   margin-top: 20px;
-}
+} */

@@ -1,28 +1,28 @@
-.gameInfoTitle{
+/* .gameInfoTitle{
   text-align: center;
   font-size: 40px;
   margin-top: 5px;
-}
+} */
 
 
-div.mb-2{
+/* div.mb-2{
   padding-top:10px;
   padding-left:20px;
   padding-right:20px;
   padding-bottom:0px;
-}
+} */
 
-button.btn {
+/* button.btn {
   margin:20px 20px;
-}
+} */
 
-div .match{
+/* div .match{
   border: solid thin black;
   height:200px;
   width:400px;
-}
+} */
 
-.gameinfo{
+/* .gameinfo{
   width:300px;
   height:200px;
   margin: 20px;
@@ -33,4 +33,4 @@ div.container{
   display:flex;
   flex-wrap:wrap;
   justify-content: center;
-}
+} */

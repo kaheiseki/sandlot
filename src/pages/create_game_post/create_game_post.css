@@ -1,37 +1,27 @@
-*{
+/* *{
   font-family: 'Arial Rounded MT Bold',sans-serif;
-  /* background-color: rgba(136,185,64,0.1) ; */
-  background-color: black;
 }
 .CreateGamePost{
   margin-top: 20px;
   text-align: center;
-  /* outline: none; */
   border-radius: 10px;
-  /* border: black 1px solid; */
 }
 .create_game_card{
   width: 400px;
   margin: 0 auto;
-  /* border-color: #45be35 ; */
-  /* border-color: #45be35 ; */
-  /* border-width:5px ; */
 }
-
 .createGamePostTitle{
   color: #ffffff;
   margin-left: 5px;
 }
+
 .form-control{
   color: white !important;
   margin-left: 5px;
   margin-bottom: 3px;
-  background-color: black !important;
 }
 
 .create_game_button{
-  /* background-color: #45be35 !important; */
-  /* border-color: #45be35; */
   background-color: #45be35 !important;
   border-color: #45be35;
   width: 180px;
@@ -45,4 +35,4 @@
 ::placeholder {
   color: #6c9867 !important;
   border-color: none;
-}
+} */

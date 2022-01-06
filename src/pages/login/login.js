@@ -39,7 +39,7 @@ export const Login = () => {
 
   return (
     <div className='form_outline'>
-      <Card>
+      <Card className='card_outline'>
         <Card.Body>
           <Card.Title className='login_title'>
             Login
