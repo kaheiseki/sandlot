@@ -2,11 +2,7 @@ import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './header.css';
-import { auth, db } from '../../firebase'
-import { onAuthStateChanged } from 'firebase/auth'
-import { collection,getDocs,query,where } from 'firebase/firestore'
-import { useState } from 'react'
-import { Logout } from "../../pages/logout/logout";
+import { auth} from '../../firebase'
 
 
 
