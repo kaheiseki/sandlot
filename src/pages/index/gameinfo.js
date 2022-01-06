@@ -51,7 +51,7 @@ const GameInfo = () => {
                     <Card.Text>日時: {String(game.date).slice(4,6)}月{String(game.date)[6,8]}日</Card.Text>
                     {/* この日付機能うまくできてない */}
                   </Card.Body>
-                  <Button onClick={()=>handleShow(index)}>詳細を見る</Button>
+                  <Button onClick={()=>handleShow(index)}>Detail</Button>
                 </Card>
               </div>
               {/* modalについての記述 */}
