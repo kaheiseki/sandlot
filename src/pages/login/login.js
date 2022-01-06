@@ -60,7 +60,7 @@ export const Login = () => {
             </div>
           </div>
           <form>
-            <Button type="button" className="btn btn-primary btn-block" onClick={()=>{LogIn(email,password);
+            <Button type="button" className="form_button" onClick={()=>{LogIn(email,password);
             navigate("/",{replace:true})
             }}>
               Submit

@@ -111,7 +111,7 @@ export const SignUp = () => {
         <form>
           <Button
             type='button'
-            className='btn btn-primary btn-block'
+            className='form_button'
             onClick={Signup(username,email,password,confirmPassword)
             }>
             Start Sandlot

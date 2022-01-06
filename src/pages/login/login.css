@@ -9,7 +9,7 @@
 
 .card_outline{
   width: 500px !important;
-  height: 400px !important;
+  height: 380px !important;
   /* card(gameinfo) が妨害してるので*/
 }
 
@@ -37,18 +37,19 @@ label{
   margin-right: 5px;
 }
 
-Button{
+.form_button{
+  margin-top: 20px !important;
   background-color: #45be35 !important;
-  width: 180px !important;
+  width: 200px !important;
   border-radius: 20px!important;
 }
 
-Button:hover{
+.form_button:hover{
   color: #000000 !important;
   background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
 }
 
 .jump_for_signup{
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
 }
