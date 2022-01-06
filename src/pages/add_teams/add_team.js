@@ -79,7 +79,6 @@ console.log(userId);
               Create team
           </Button>
         </form>
-
       </Card>
 
 
