@@ -15,7 +15,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,Button} from 'react-bootstrap';
 import './add_team.css';
-
+import { useNavigate } from 'react-router-dom';
 
 export const AddTeam = () => {
 
@@ -24,6 +24,7 @@ export const AddTeam = () => {
   const [newPlace, setNewPlace] = useState("");
   const [newCaptain, setNewCaptain] = useState("");
   const [userId,setUserId] = useState("");
+  const navigate = useNavigate();
 
   const gamesCollectionRef = collection(db, "Teams");
   onAuthStateChanged(auth,(user)=>{
@@ -75,7 +76,7 @@ console.log(userId);
           />
         </Card.Body>
         <form>
-          <Button onClick={createTeam}>
+          <Button onClick={() => createTeam()}>
               Create team
           </Button>
         </form>

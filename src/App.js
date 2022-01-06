@@ -21,11 +21,13 @@ import { collection,getDocs,query,where } from 'firebase/firestore'
 const App = () => {
   const [username,setUsername] = useState("");
   const [isLogin, setIsLogin] = useState(false);
+  const [uid,setUid] = useState("");
   onAuthStateChanged(auth,async (user) => {
     console.log("before")
     if(user){
       setIsLogin(true);
       const uid = user.uid;
+      setUid(uid);
       const email = user.email;
       const q = query(collection(db, "Users"),where("id","==",uid));
       const querySnapshot = await getDocs(q);
@@ -46,7 +48,7 @@ const App = () => {
             <Route path="/" element={<GameInfo/>}/>
             <Route path="/gameinfo" element={<GameInfo/>}/>
             <Route path="/myteam" element={<MyTeam/>}/>
-            <Route path="/creategame" element={<CreateGamePost/>}/>
+            <Route path="/creategame" uid = {uid} element={<CreateGamePost/>}/>
             <Route path="/teamtable" element={<TeamInfo/>}/>
             <Route path = "/createteam" element = {<AddTeam/>}/>
             <Route path = "/login" element = {<Login/>}/>
