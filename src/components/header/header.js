@@ -11,22 +11,21 @@ const Header = ({isLogin, username}) => {
   const LogOut = () => {
     auth.signOut();
   }
-  console.log(isLogin);
   if(isLogin){
     return(
       <Navbar collapseOnSelect expand="lg" className="header_outline">
-        <Navbar.Brand href="/gameinfo" className="headerText">
+        <Navbar.Brand href="/gamelist" className="headerText">
             Sandlot
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="header_contents_outline">
             <Nav className="mr-auto">
-              <Nav.Link href="/gameinfo" className="headerContents">Game Table</Nav.Link>
-              <Nav.Link href="/myteam" className="headerContents">MyTeam</Nav.Link>
+              <Nav.Link href="/gamelist" className="headerContents">Game List</Nav.Link>
               <Nav.Link href="/creategame" className="headerContents">Post game</Nav.Link>
-              <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
-              <Nav.Link href="/login" className="headerContents" onClick={()=>LogOut()}>Log out</Nav.Link>
+              <Nav.Link href="/teamlist" className="headerContents">Team List</Nav.Link>
+              <Nav.Link href="/myteam" className="headerContents">MyTeam</Nav.Link>
+              <Nav.Link href="/" className="headerContents" onClick={()=>LogOut()}>Log out</Nav.Link>
               <Nav.Link className="headerContents">{username}さん</Nav.Link>
               {/* hoverした時クリッカブルに見える */}
             </Nav>
@@ -37,15 +36,15 @@ const Header = ({isLogin, username}) => {
   }else{
     return(
       <Navbar collapseOnSelect expand="lg" className="header_outline">
-        <Navbar.Brand href="/gameinfo" className="headerText">
+        <Navbar.Brand href="/gamelist" className="headerText">
             Sandlot
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="header_contents_outline">
             <Nav className="mr-auto">
-              <Nav.Link href="/gameinfo" className="headerContents">Game table</Nav.Link>
-              <Nav.Link href="/teamtable" className="headerContents">Team table</Nav.Link>
+              <Nav.Link href="/gamelist" className="headerContents">Game List</Nav.Link>
+              <Nav.Link href="/teamlist" className="headerContents">Team List</Nav.Link>
               <Nav.Link href="/login" className="headerContents">Log in</Nav.Link>
 
             </Nav>

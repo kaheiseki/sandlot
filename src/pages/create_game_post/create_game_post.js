@@ -67,7 +67,7 @@ export const CreateGamePost = () => {
             Make a Game
           </Card.Title>
           <div className='form-group'>
-            <label>Date</label>
+            <label>日時</label>
             <input
               className='form-control'
               type="date"
@@ -79,7 +79,7 @@ export const CreateGamePost = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Play Ball Time</label>
+            <label>集合時刻</label>
             <input
               className='form-control'
               type="time"
@@ -91,10 +91,9 @@ export const CreateGamePost = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Ground</label>
+            <label>集合場所</label>
             <input
               className='form-control'
-              placeholder="Place"
               onChange={(event) => {
                 setNewPlace(event.target.value);
               }}
@@ -102,11 +101,10 @@ export const CreateGamePost = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Amount of Member</label>
+            <label>参加人数</label>
             <input
               className='form-control'
               type="number"
-              placeholder="Count"
               onChange={(event) => {
                 setNewCount(event.target.value);
               }}
@@ -114,11 +112,10 @@ export const CreateGamePost = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Cost</label>
+            <label>費用</label>
             <input
               className='form-control'
               type="number"
-              placeholder="Cost"
               onChange={(event) => {
                 setNewCost(event.target.value);
               }}
@@ -126,10 +123,9 @@ export const CreateGamePost = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Helper</label>
+            <label>募集人数</label>
             <input
               className='form-control'
-              placeholder="Helper"
               onChange={(event) => {
                 setNewHelper(event.target.value);
               }}

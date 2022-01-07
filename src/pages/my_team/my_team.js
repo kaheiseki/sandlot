@@ -38,6 +38,7 @@ export const MyTeam = () => {
       captain: captain
     });
   };
+  console.log(teamname);
 
   return (
     <div className='my_team_outline'>
@@ -47,7 +48,7 @@ export const MyTeam = () => {
             My team
           </Card.Title>
           <div className='form-group'>
-            <label>Team Name</label>
+            <label>チーム名</label>
             <input
               className='form-control'
               defaultValue={teamname}
@@ -57,7 +58,7 @@ export const MyTeam = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Home Ground</label>
+            <label>本拠地</label>
             <input
               className='form-control'
               defaultValue = {place}
@@ -67,7 +68,7 @@ export const MyTeam = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Amount of Member</label>
+            <label>メンバー数</label>
             <input
               className='form-control'
               type="number"
@@ -78,7 +79,7 @@ export const MyTeam = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Captain</label>
+            <label>代表者</label>
             <input
               className='form-control'
               defaultValue={captain}

@@ -39,7 +39,7 @@ const TeamInfo = () => {
   return(
     <div>
       <div className="gameInfoTitle">
-        Team Table
+        Team List
       </div>
       <div className="container">
         {teams.map((team,index) => {
@@ -52,7 +52,7 @@ const TeamInfo = () => {
                     <Card.Text>チーム人数: {team.count}</Card.Text>
                     <Card.Text>場所: {team.place}</Card.Text>
                   </Card.Body>
-                  <Button style = {{width:"120px"}} onClick={()=>handleShow(index)}>Detail</Button>
+                  <Button style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>
                 </Card>
               </div>
               {/* modalについての記述 */}

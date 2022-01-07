@@ -36,7 +36,7 @@ const GameInfo = () => {
   return(
     <div>
       <div className="gameInfoTitle">
-        Game Info
+        Game List
       </div>
       <div className="container">
         {games.map((game, index) => {
@@ -51,7 +51,7 @@ const GameInfo = () => {
                     <Card.Text>日時: {game.date}</Card.Text>
                     {/* この日付機能うまくできてない */}
                   </Card.Body>
-                  <Button onClick={()=>handleShow(index)}>Detail</Button>
+                  <Button onClick={()=>handleShow(index)}>詳細を見る</Button>
                 </Card>
               </div>
               {/* modalについての記述 */}

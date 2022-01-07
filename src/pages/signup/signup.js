@@ -118,6 +118,9 @@ export const SignUp = () => {
         </Card.Body>
       </Card>
       <div>
+        <p className='attention_for_signup'>
+          登録したメールメールアドレスは他のユーザーに公開されます。
+        </p>
         <p className='jump_for_login'>
           Already have an account? <a href="/login">Log in</a>
         </p>
