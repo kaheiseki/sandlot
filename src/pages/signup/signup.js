@@ -71,7 +71,7 @@ export const SignUp = () => {
               Sign Up
             </Card.Title>
             <div className='form-group'>
-              <label>User Name</label>
+              <label>ユーザー名</label>
               <input
                 className='form-control'
                 placeholder="Username"
@@ -81,7 +81,7 @@ export const SignUp = () => {
             </div>
 
             <div className='form-group'>
-              <label>Email</label>
+              <label>メールアドレス</label>
               <input
                 type="email"
                 className='form-control'
@@ -92,7 +92,7 @@ export const SignUp = () => {
             </div>
 
             <div className='form-group'>
-                <label>Password</label>
+                <label>パスワード</label>
                 <input
                   type="password"
                   className='form-control'
@@ -103,7 +103,7 @@ export const SignUp = () => {
             </div>
 
           <div className='form-group'>
-              <label>Password（Confirm）</label>
+              <label>パスワード（確認用）</label>
               <input type="password" className='form-control' placeholder="Enter password (Confirm)" value={confirmPassword} onChange={inputConfirmPassword}/>
           </div>
           <form>

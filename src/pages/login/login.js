@@ -48,19 +48,19 @@ export const Login = () => {
             Login
           </Card.Title>
           <div className='form-group'>
-            <label>Email address</label>
+            <label>メールアドレス</label>
             <input type="email" className='form-control' placeholder="Enter email" value={email} onChange={(e)=>inputEmail(e)}/>
           </div>
 
           <div className='form-group'>
-              <label>Password</label>
+              <label>パスワード</label>
               <input type="password" className='form-control' placeholder="Enter password" value={password} onChange={(e)=>inputPassword(e)}/>
           </div>
 
           <div className='form-group'>
             <div className='custom-control custom-checkbox'>
-              <input type="checkbox" className='custom-control-input' id="customCheck1"/>
-              <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+              {/* <input type="checkbox" className='custom-control-input' id="customCheck1"/>
+              <label className="custom-control-label" htmlFor="customCheck1">Remember me</label> */}
               {/* Remember meの実装はまだ */}
             </div>
           </div>
