@@ -43,7 +43,7 @@ const App = () => {
     <div>
       <Header isLogin={isLogin} username={username}/>
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<GameInfo/>}/>
             <Route path="/gamelist" element={<GameInfo/>}/>
