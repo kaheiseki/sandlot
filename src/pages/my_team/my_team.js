@@ -11,7 +11,7 @@ import './my_team.css';
 export const MyTeam = () => {
 
   const [uid,setUid] = useState(" ");
-  const [teamname,setTeamname] = useState("");
+  const [teamName,setTeamname] = useState("");
   const [place,setPlace] = useState("");
   const [count,setCount] = useState(0);
   const [captain,setCaptain] = useState("");
@@ -33,19 +33,17 @@ export const MyTeam = () => {
   const upDate = async () => {
     setIsEdit(false);
     await updateDoc(teamsDocumentRef, {
-      name: teamname,
+      name: teamName,
       place: place,
       count: Number(count),
       captain: captain
     });
   };
-  console.log(teamname);
+  console.log(teamName);
   //タップしたら編集できるようにするための記述
   const [isEdit, setIsEdit] = useState(false);
   const handleEdit = () => {
     setIsEdit(true);
-    console.log("edit pushed")
-    console.log(setIsEdit)
   }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,7 +65,7 @@ export const MyTeam = () => {
             <div>
               <div className='form-group'>
                 <label>チーム名</label>
-                <p>{teamname}</p>
+                <p>{teamName}</p>
                 </div>
                 <div className='form-group'>
                   <label>本拠地</label>
@@ -88,7 +86,7 @@ export const MyTeam = () => {
                 <label>チーム名</label>
                 <input
                   className='form-control'
-                  defaultValue={teamname}
+                  defaultValue={teamName}
                   // onBlur={handleBlur}
                   onChange={(event) => {
                     setTeamname(event.target.value);
