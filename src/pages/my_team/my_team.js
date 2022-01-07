@@ -30,28 +30,35 @@ export const MyTeam = () => {
   });
 
   const teamsDocumentRef = doc(db, "Teams", uid);
+  // const upDate = async () => {
+  //   setIsEdit(false);
+  //   await updateDoc(teamsDocumentRef, {
+  //     name: teamName,
+  //     place: place,
+  //     count: Number(count),
+  //     captain: captain
+  //   });
+  // };
   const upDate = async () => {
     setIsEdit(false);
-    await updateDoc(teamsDocumentRef, {
-      name: teamName,
-      place: place,
-      count: Number(count),
-      captain: captain
-    });
   };
+  //   const userDoc = doc(db, "teams", id);
+  //   const newFields = { name: teamName, place: place, count: count, captain: captain };
+  //   await updateDoc(userDoc, newFields);
+  // };
   console.log(teamName);
   //タップしたら編集できるようにするための記述
   const [isEdit, setIsEdit] = useState(false);
   const handleEdit = () => {
     setIsEdit(true);
   }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsEdit(false);
-  }
-  const handleBlur = () => {
-    setIsEdit(false);
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsEdit(false);
+  // }
+  // const handleBlur = () => {
+  //   setIsEdit(false);
+  // }
 
 
   return (
@@ -62,25 +69,6 @@ export const MyTeam = () => {
             My team
           </Card.Title>
           {isEdit ? (
-            <div>
-              <div className='form-group'>
-                <label>チーム名</label>
-                <p className='team_content'>{teamName}</p>
-                </div>
-                <div className='form-group'>
-                  <label>本拠地</label>
-                  <p className='team_content'>{place}</p>
-                </div>
-                <div className='form-group'>
-                  <label>メンバー数</label>
-                  <p className='team_content'>{count}</p>
-                </div>
-                <div className='form-group'>
-                  <label>代表者</label>
-                  <p className='team_content'>{captain}</p>
-              </div>
-            </div>
-          ) : (
             <div>
               <div className='form-group'>
                 <label>チーム名</label>
@@ -123,6 +111,25 @@ export const MyTeam = () => {
                     setCaptain(event.target.value);
                   }}
                 />
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className='form-group'>
+                <label>チーム名</label>
+                <p className='team_content'>{teamName}</p>
+                </div>
+                <div className='form-group'>
+                  <label>本拠地</label>
+                  <p className='team_content'>{place}</p>
+                </div>
+                <div className='form-group'>
+                  <label>メンバー数</label>
+                  <p className='team_content'>{count}</p>
+                </div>
+                <div className='form-group'>
+                  <label>代表者</label>
+                  <p className='team_content'>{captain}</p>
               </div>
             </div>
           )}
