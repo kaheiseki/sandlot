@@ -65,19 +65,19 @@ export const MyTeam = () => {
             <div>
               <div className='form-group'>
                 <label>チーム名</label>
-                <p>{teamName}</p>
+                <p className='team_content'>{teamName}</p>
                 </div>
                 <div className='form-group'>
                   <label>本拠地</label>
-                  <p>{place}</p>
+                  <p className='team_content'>{place}</p>
                 </div>
                 <div className='form-group'>
                   <label>メンバー数</label>
-                  <p>{count}</p>
+                  <p className='team_content'>{count}</p>
                 </div>
                 <div className='form-group'>
                   <label>代表者</label>
-                  <p>{captain}</p>
+                  <p className='team_content'>{captain}</p>
               </div>
             </div>
           ) : (
@@ -129,7 +129,7 @@ export const MyTeam = () => {
           {isEdit ? (
             <form>
               <Button className='update_button' onClick={() => upDate()}>
-                  Update team
+                  Update
               </Button>
             </form>
           ) : (
@@ -137,6 +137,7 @@ export const MyTeam = () => {
               <Button className='edit_button' onClick={() => handleEdit()}>
                   Edit
               </Button>
+              {/* やめるボタンも */}
             </form>
           )}
 

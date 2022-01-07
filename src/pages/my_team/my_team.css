@@ -17,3 +17,18 @@
   text-align: center;
   color: #000000 !important;
 }
+.team_content{
+  padding: 6px 12px;
+}
+
+.update_button{
+  margin-top: 20px !important;
+  background-color: #45be35 !important;
+  width: 200px !important;
+  border-radius: 20px!important;
+}
+
+.update_button:hover{
+  color: #ffffff !important;
+  background-image: linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+}
