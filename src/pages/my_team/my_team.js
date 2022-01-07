@@ -31,6 +31,7 @@ export const MyTeam = () => {
 
   const teamsDocumentRef = doc(db, "Teams", uid);
   const upDate = async () => {
+    setIsEdit(false);
     await updateDoc(teamsDocumentRef, {
       name: teamname,
       place: place,
@@ -39,6 +40,21 @@ export const MyTeam = () => {
     });
   };
   console.log(teamname);
+  //タップしたら編集できるようにするための記述
+  const [isEdit, setIsEdit] = useState(false);
+  const handleEdit = () => {
+    setIsEdit(true);
+    console.log("edit pushed")
+    console.log(setIsEdit)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsEdit(false);
+  }
+  const handleBlur = () => {
+    setIsEdit(false);
+  }
+
 
   return (
     <div className='my_team_outline'>
@@ -47,52 +63,85 @@ export const MyTeam = () => {
           <Card.Title className='myteam_title'>
             My team
           </Card.Title>
-          <div className='form-group'>
-            <label>チーム名</label>
-            <input
-              className='form-control'
-              defaultValue={teamname}
-              onChange={(event) => {
-                setTeamname(event.target.value);
-              }}
-            />
-          </div>
-          <div className='form-group'>
-            <label>本拠地</label>
-            <input
-              className='form-control'
-              defaultValue = {place}
-              onChange={(e) => {
-                setPlace(e.target.value);
-              }}
-            />
-          </div>
-          <div className='form-group'>
-            <label>メンバー数</label>
-            <input
-              className='form-control'
-              type="number"
-              defaultValue = {count}
-              onChange={(event) => {
-                setCount(event.target.value);
-              }}
-            />
-          </div>
-          <div className='form-group'>
-            <label>代表者</label>
-            <input
-              className='form-control'
-              defaultValue={captain}
-              onChange={(event) => {
-                setCaptain(event.target.value);
-              }}
-            />
-          </div>
-          <form>
-            <Button className='myteam_button' onClick={() => upDate()}>
-                Update team
-            </Button>
-          </form>
+          {isEdit ? (
+            <div>
+              <div className='form-group'>
+                <label>チーム名</label>
+                <p>{teamname}</p>
+                </div>
+                <div className='form-group'>
+                  <label>本拠地</label>
+                  <p>{place}</p>
+                </div>
+                <div className='form-group'>
+                  <label>メンバー数</label>
+                  <p>{count}</p>
+                </div>
+                <div className='form-group'>
+                  <label>代表者</label>
+                  <p>{captain}</p>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className='form-group'>
+                <label>チーム名</label>
+                <input
+                  className='form-control'
+                  defaultValue={teamname}
+                  // onBlur={handleBlur}
+                  onChange={(event) => {
+                    setTeamname(event.target.value);
+                  }}
+                />
+              </div>
+              <div className='form-group'>
+                <label>本拠地</label>
+                <input
+                  className='form-control'
+                  defaultValue = {place}
+                  onChange={(e) => {
+                    setPlace(e.target.value);
+                  }}
+                />
+              </div>
+              <div className='form-group'>
+                <label>メンバー数</label>
+                <input
+                  className='form-control'
+                  type="number"
+                  defaultValue = {count}
+                  onChange={(event) => {
+                    setCount(event.target.value);
+                  }}
+                />
+              </div>
+              <div className='form-group'>
+                <label>代表者</label>
+                <input
+                  className='form-control'
+                  defaultValue={captain}
+                  onChange={(event) => {
+                    setCaptain(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+          )}
+          {isEdit ? (
+            <form>
+              <Button className='update_button' onClick={() => upDate()}>
+                  Update team
+              </Button>
+            </form>
+          ) : (
+            <form>
+              <Button className='edit_button' onClick={() => handleEdit()}>
+                  Edit
+              </Button>
+            </form>
+          )}
+
         </Card.Body>
       </Card>
     </div>
