@@ -1,0 +1,19 @@
+.my_team_outline{
+  text-align: center;
+  border-radius: 10px;
+  margin:60px auto 0 !important;
+  color: #000000;
+  width: 500px;
+}
+
+.my_team_card_outline{
+  width: 500px !important;
+  height: 500px !important;
+  /* card(gameinfo) が妨害してるので*/
+}
+
+.myteam_title{
+  font-size: 35px;
+  text-align: center;
+  color: #000000 !important;
+}
