@@ -60,73 +60,90 @@ export const CreateGamePost = () => {
 
 
   return (
-    <div className='CreateGamePost'>
-      <Card className="create_game_card">
+    <div className='form_outline'>
+      <Card className="post_game_card_outline">
         <Card.Body>
-          <Card.Title className='createGamePostTitle'>
+          <Card.Title className='post_game_title'>
             Make a Game
           </Card.Title>
-          <input
-            className='form-control'
-            type="number"
-            placeholder="Date: ex)20220120"
-            onChange={(event) => {
-              setNewGameDate(event.target.value);
-            }}
-            value={newGameDate}
-          />
-          {/* カレンダーから選ぶやつ実装したい */}
-          <input
-            className='form-control'
-            type="number"
-            placeholder="Playball Time: ex)15:00"
-            onChange={(event) => {
-              setNewGameTime(event.target.value);
-            }}
-            defaultValue={newGameTime}
-          />
-          <input
-            className='form-control'
-            placeholder="Place"
-            onChange={(event) => {
-              setNewPlace(event.target.value);
-            }}
-            value={newPlace}
-          />
-          <input
-            className='form-control'
-            type="number"
-            placeholder="Count"
-            onChange={(event) => {
-              setNewCount(event.target.value);
-            }}
-            value={newCount}
-          />
-          <input
-            className='form-control'
-            type="number"
-            placeholder="Cost"
-            onChange={(event) => {
-              setNewCost(event.target.value);
-            }}
-            value={newCost}
-          />
-          <input
-            className='form-control'
-            placeholder="Helper"
-            onChange={(event) => {
-              setNewHelper(event.target.value);
-            }}
-            value={newHelper}
-          />
+          <div className='form-group'>
+            <label>Date</label>
+            <input
+              className='form-control'
+              type="number"
+              placeholder="Date: ex)20220120"
+              onChange={(event) => {
+                setNewGameDate(event.target.value);
+              }}
+              value={newGameDate}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Play Ball Time</label>
+            <input
+              className='form-control'
+              type="number"
+              placeholder="Playball Time: ex)15:00"
+              onChange={(event) => {
+                setNewGameTime(event.target.value);
+              }}
+              defaultValue={newGameTime}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Ground</label>
+            <input
+              className='form-control'
+              placeholder="Place"
+              onChange={(event) => {
+                setNewPlace(event.target.value);
+              }}
+              value={newPlace}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Amount of Member</label>
+            <input
+              className='form-control'
+              type="number"
+              placeholder="Count"
+              onChange={(event) => {
+                setNewCount(event.target.value);
+              }}
+              value={newCount}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Cost</label>
+            <input
+              className='form-control'
+              type="number"
+              placeholder="Cost"
+              onChange={(event) => {
+                setNewCost(event.target.value);
+              }}
+              value={newCost}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Helper</label>
+            <input
+              className='form-control'
+              placeholder="Helper"
+              onChange={(event) => {
+                setNewHelper(event.target.value);
+              }}
+              value={newHelper}
+            />
+          </div>
+          <form>
+            <Button className='post_game_button' onClick={()=>{createGame();
+            navigate("/",{replace:true})}} autoFocus>
+              {/* autoFocusしたい */}
+                Create Game
+            </Button>
+          </form>
         </Card.Body>
-        <form>
-          <Button className='create_game_button' onClick={()=>{createGame();
-          navigate("/",{replace:true})}} autoFocus>
-            {/* autoFocusしたい */}
-              Create Game
-          </Button>
-        </form>
       </Card>
     </div>
   );
