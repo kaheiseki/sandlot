@@ -47,7 +47,7 @@ export const SignUp = () => {
         return createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
           const user = userCredential.user;
           const usersCollectionRef = collection(db, "Users");
-          addDoc(usersCollectionRef, { name:username, id:user.uid});
+          addDoc(usersCollectionRef, { name:username, id:user.uid,email:user.email});
           setUsername("");
           setEmail("");
           setPassword("");

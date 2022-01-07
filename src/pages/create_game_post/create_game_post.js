@@ -26,6 +26,7 @@ export const CreateGamePost = () => {
   const [newCost, setNewCost] = useState("");
   const [newHelper, setNewHelper] = useState("");
   const [userId,setUserId] = useState(" ");
+  const [email,setEmail] = useState("");
 
   const gamesCollectionRef = collection(db, "Games");
 
@@ -33,6 +34,7 @@ export const CreateGamePost = () => {
     if(user){
       const uid = user.uid;
       setUserId(uid);
+      setEmail(user.email);
       const teamsDocumentRef = doc(db,"Teams",userId);
       const docSnap = await getDoc(teamsDocumentRef);
       if(docSnap){
@@ -44,7 +46,7 @@ export const CreateGamePost = () => {
   })
 
   const createGame = async () => {
-    await addDoc(gamesCollectionRef, { name: newTeamName, date: newGameDate, time: newGameTime, place: newPlace, count: Number(newCount), cost: newCost, helper: newHelper });
+    await addDoc(gamesCollectionRef, { name: newTeamName, date: newGameDate, time: newGameTime, place: newPlace, count: Number(newCount), cost: newCost, helper: newHelper,email:email });
     // フォーム送信後中身を空にする処理（まだうまくいってない）
     //数字型の中身をからにできてない
     setNewCount("");

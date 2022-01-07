@@ -58,7 +58,7 @@ const GameInfo = () => {
               <div>
                 <Modal show={show} onHide={handleClose} game={game}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>詳細情報</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <p>チーム名:{games[indexContent].name}</p>
@@ -66,6 +66,7 @@ const GameInfo = () => {
                     <p>試合日:{games[indexContent].date}</p>
                     <p>開始時間:{games[indexContent].time}</p>
                     <p>費用:{games[indexContent].cost}円</p>
+                    <p>連絡先:{games[indexContent].email}</p>
                   </Modal.Body>
                   <Modal.Footer>
                     <Button onClick={()=>handleClose()}>Close</Button>

@@ -49,7 +49,7 @@ const TeamInfo = () => {
                 <Card style={{ width: '18rem' , height:"12rem",borderRadius:"10px"}}>
                   <Card.Body>
                     <Card.Title>{team.name}</Card.Title>
-                    <Card.Text>チーム人数: {team.count}</Card.Text>
+                    <Card.Text>メンバー数: {team.count}</Card.Text>
                     <Card.Text>場所: {team.place}</Card.Text>
                   </Card.Body>
                   <Button style = {{width:"120px"}} onClick={()=>handleShow(index)}>詳細を見る</Button>

@@ -39,10 +39,10 @@ export const AddTeam = () => {
       <Card className='add_team_card_outline'>
         <Card.Body>
           <Card.Title className='form_title'>
-            Team Info
+            チーム登録
           </Card.Title>
           <div className='form-group'>
-            <label>Team Name</label>
+            <label>チーム名</label>
             <input
               className='form-control'
               placeholder="Team name..."
@@ -52,7 +52,7 @@ export const AddTeam = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Home Ground</label>
+            <label>本拠地</label>
             <input
               className='form-control'
               placeholder="Home Ground..."
@@ -62,7 +62,7 @@ export const AddTeam = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Email address</label>
+            <label>メンバー数</label>
             <input
               className='form-control'
               type="number"
@@ -73,7 +73,7 @@ export const AddTeam = () => {
             />
           </div>
           <div className='form-group'>
-            <label>Email address</label>
+            <label>代表者</label>
             <input
               className='form-control'
               placeholder="Representative"
