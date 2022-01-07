@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sandlot/static/css/main.66f67459.css",
-    "main.js": "/sandlot/static/js/main.ab323e29.js",
-    "index.html": "/sandlot/index.html",
-    "main.66f67459.css.map": "/sandlot/static/css/main.66f67459.css.map",
-    "main.ab323e29.js.map": "/sandlot/static/js/main.ab323e29.js.map"
+    "main.css": "/static/css/main.accbbcb8.css",
+    "main.js": "/static/js/main.23b4b606.js",
+    "index.html": "/index.html",
+    "main.accbbcb8.css.map": "/static/css/main.accbbcb8.css.map",
+    "main.23b4b606.js.map": "/static/js/main.23b4b606.js.map"
   },
   "entrypoints": [
-    "static/css/main.66f67459.css",
-    "static/js/main.ab323e29.js"
+    "static/css/main.accbbcb8.css",
+    "static/js/main.23b4b606.js"
   ]
 }
