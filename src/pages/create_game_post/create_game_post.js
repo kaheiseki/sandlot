@@ -70,7 +70,7 @@ export const CreateGamePost = () => {
             <label>Date</label>
             <input
               className='form-control'
-              type="number"
+              type="date"
               placeholder="Date: ex)20220120"
               onChange={(event) => {
                 setNewGameDate(event.target.value);
@@ -82,7 +82,7 @@ export const CreateGamePost = () => {
             <label>Play Ball Time</label>
             <input
               className='form-control'
-              type="number"
+              type="time"
               placeholder="Playball Time: ex)15:00"
               onChange={(event) => {
                 setNewGameTime(event.target.value);

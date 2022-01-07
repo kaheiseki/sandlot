@@ -48,7 +48,7 @@ const GameInfo = () => {
                     <Card.Title>{game.name}</Card.Title>
                     <Card.Text>チーム人数: {game.count}</Card.Text>
                     <Card.Text>場所: {game.place}</Card.Text>
-                    <Card.Text>日時: {String(game.date).slice(4,6)}月{String(game.date)[6,8]}日</Card.Text>
+                    <Card.Text>日時: {game.date}</Card.Text>
                     {/* この日付機能うまくできてない */}
                   </Card.Body>
                   <Button onClick={()=>handleShow(index)}>Detail</Button>
@@ -63,7 +63,8 @@ const GameInfo = () => {
                   <Modal.Body>
                     <p>チーム名:{games[indexContent].name}</p>
                     <p>参加メンバー数:{games[indexContent].count}</p>
-                    <p>試合日:{String(games[indexContent].date)[3,5]}月{String(games[indexContent].date)[5,7]}日</p>
+                    <p>試合日:{games[indexContent].date}</p>
+                    <p>開始時間:{games[indexContent].time}</p>
                     <p>費用:{games[indexContent].cost}円</p>
                   </Modal.Body>
                   <Modal.Footer>
