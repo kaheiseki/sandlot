@@ -56,6 +56,7 @@ const App = () => {
             <Route path = "/signup" element = {<SignUp/>}/>
             <Route path="*" element={<ErrorPage/>}/>
           </Routes>
+          {/* react router で hrefを改修 */}
         </BrowserRouter>
       </div>
     </div>
